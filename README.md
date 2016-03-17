@@ -1,9 +1,10 @@
 # mindup theme dev
 
 ### env doc
-- `develop` branch for onging development.
-- push to `develop` to trigger deploybot deploy to staging site located at: xxxxx.xxxx.xxx.
-- `master` branch for pull requests upon release tags only.
+- **Bugs & Issues:** https://github.com/amandablum/mindup/issues/
+- Branch: `[develop](https://github.com/amandablum/mindup/tree/develop)` for onging development.
+- Branch: `master` for pull requests upon release tags only.
+- **Process:** push to `develop` to trigger [deploybot deploy](https://howlingzoe.deploybot.com/77761-mindup/environments/67777-mindup-gitub) to staging site located at: http://mindup.vuurrclients.com
 
 ### dev doc
 1. `pagebuilder` built in ACF. Within each module the only option is whether you're using an image or video
