@@ -12,8 +12,6 @@ function mindup_acf_hyperloop() {
 	// if we have flexible content_type
 	if ( have_rows( 'content_type' ) ) :
 
-		echo '<p>WE GOT STUFF!</p>';
-
 		// start the hyperloop through the flexible content type layouts
 		while ( have_rows( 'content_type' ) ) : the_row();
 
@@ -63,10 +61,16 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == '2_column_copy_left_imagevideo_right' ) :
 
 				// pull and sanitize vars
-
+				$two_col_video_or_imageright = get_sub_field( '2col_video_or_imageright' );                 // Radio - image || video
+				$two_col_videoright          = get_sub_field( '2col_videoright' );                          // oEmbed
+				$two_col_imageright          = get_sub_field( '2col_imageright' );                          // Image
+				$two_col_headlineleft        = sanitize_text_field( get_sub_field( '2col_headlineleft' ) ); // Text
+				$two_col_copyleft            = wp_kses_post( get_sub_field( '2col_copyleft' ) );            // Text Area
+				$two_col_ctacopyleft         = sanitize_text_field( get_sub_field( '2col_ctacopyleft' ) );  // Text
+				$two_col_ctalinkleft         = esc_url( get_sub_field( '2col_ctalinkleft' ) );              // Url
 
 				// load the layout view
-				#require get_template_directory() . '/template-parts/acf-2column-leftcopy-rightmedia.php';
+				require get_template_directory() . '/template-parts/acf-2column-leftcopy-rightmedia.php';
 
 			endif; // get_row_layout : 2_column_copy_left_imagevideo_right
 
