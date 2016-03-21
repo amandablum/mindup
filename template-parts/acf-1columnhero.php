@@ -1,6 +1,6 @@
 <?php
 /**
- * ACF Content Type : 1_column_hero
+ * ACF Content Type View : 1_column_hero
  *
  * @package mindup
  */
@@ -19,9 +19,7 @@
 		<?php
 		elseif ( $hero_videoorimage == 'image' ) : ?>
 
-			<div class="image-responsive">
-				<img class="image-responsive" src="<?php echo $hero_image['url'] ?>" alt="">
-			</div>
+			<img class="image-responsive" src="<?php echo $hero_image['url']; ?>" alt="">
 
 			<p><?php echo $hero_headline; ?></p>
 
@@ -30,9 +28,7 @@
 			<?php
 			if ( $hero_cta_copy && $hero_cta_link ) : ?>
 
-				<div class="">
-					<a href="<?php echo $hero_cta_link ?>" class="btn"><?php echo $hero_cta_copy ?></a>
-				</div>
+				<p><a href="<?php echo $hero_cta_link; ?>" class="btn"><?php echo $hero_cta_copy; ?></a></p>
 
 			<?php
 			endif;
