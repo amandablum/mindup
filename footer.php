@@ -8,7 +8,6 @@
  *
  * @package mindup
  */
-
 ?>
 
 	</div><!-- #content -->
@@ -16,7 +15,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 
-			<span class="sep"> | </span>
+			<span class="sep">  </span>
 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
