@@ -5,6 +5,7 @@
  * Template Name: Pagebuilder
  *
  * @package mindup
+ * @author ChuckReynolds <chuck@vuurr.com>
  */
 
 get_header(); ?>

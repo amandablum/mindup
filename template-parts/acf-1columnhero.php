@@ -3,6 +3,7 @@
  * ACF Content Type View : 1_column_hero
  *
  * @package mindup
+ * @author ChuckReynolds <chuck@vuurr.com>
  */
 ?>
 

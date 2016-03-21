@@ -3,6 +3,7 @@
  * ACF Content Type View : 2_column_copy_left_imagevideo_right
  *
  * @package mindup
+ * @author ChuckReynolds <chuck@vuurr.com>
  */
 ?>
 

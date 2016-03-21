@@ -3,6 +3,7 @@
  * ACF Content Type View : centered_copy
  *
  * @package mindup
+ * @author ChuckReynolds <chuck@vuurr.com>
  */
 ?>
 

@@ -5,6 +5,7 @@
  * to init: do_action( 'mindup_hyperloop' );
  *
  * @package mindup
+ * @author ChuckReynolds <chuck@vuurr.com>
  */
 
 function mindup_acf_hyperloop() {
