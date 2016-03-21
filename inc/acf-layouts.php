@@ -43,10 +43,16 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == '2_column_' ) :
 
 				// pull and sanitize vars
-
+				$two_col_video_or_imageleft = get_sub_field( '2col_video_or_imageleft' );                   // Radio - image || video
+				$two_col_videoleft          = get_sub_field( '2col_videoleft' );                            // oEmbed
+				$two_col_imageleft          = get_sub_field( '2col_imageleft' );                            // Image
+				$two_col_headlineright      = sanitize_text_field( get_sub_field( '2col_headlineright' ) ); // Text
+				$two_col_copyright          = wp_kses_post( get_sub_field( '2col_copyright' ) );            // Text Area
+				$two_col_ctacopyright       = sanitize_text_field( get_sub_field( '2col_ctacopyright' ) );  // Text
+				$two_col_ctalinkright       = esc_url( get_sub_field( '2col_ctalinkright' ) );              // Url
 
 				// load the layout view
-				#require get_template_directory() . '/template-parts/acf-2column-leftmedia-rightcopy.php';
+				require get_template_directory() . '/template-parts/acf-2column-leftmedia-rightcopy.php';
 
 			endif; // get_row_layout : 2_column_
 
