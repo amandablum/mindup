@@ -71,23 +71,7 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == '3_column' ) :
 
 				// pull and sanitize vars
-				$three_col_headline1 = sanitize_text_field( get_sub_field( '3col_headline1' ) ); // Text
-				$three_col_image1    = get_sub_field( '3col_image1' );                           // Image
-				$three_col_copy1     = wp_kses_post( get_sub_field( '3col_copy1' ) );            // Text Area
-				$three_col_ctacopy1  = sanitize_text_field( get_sub_field( '3col_ctacopy1' ) );  // Text
-				$three_col_ctalink1  = esc_url( get_sub_field( '3col_ctalink1' ) );              // Url
-
-				$three_col_headline2 = sanitize_text_field( get_sub_field( '3col_headline2' ) ); // Text
-				$three_col_image2    = get_sub_field( '3col_image2' );                           // Image
-				$three_col_copy2     = wp_kses_post( get_sub_field( '3col_copy2' ) );            // Text Area
-				$three_col_ctacopy2  = sanitize_text_field( get_sub_field( '3col_ctacopy2' ) );  // Text
-				$three_col_ctalink2  = esc_url( get_sub_field( '3col_ctalink2' ) );              // Url
-
-				$three_col_headline3 = sanitize_text_field( get_sub_field( '3col_headline3' ) ); // Text
-				$three_col_image3    = get_sub_field( '3col_image3' );                           // Image
-				$three_col_copy3     = wp_kses_post( get_sub_field( '3col_copy3' ) );            // Text Area
-				$three_col_ctacopy3  = sanitize_text_field( get_sub_field( '3col_ctacopy3' ) );  // Text
-				$three_col_ctalink3  = esc_url( get_sub_field( '3col_ctalink3' ) );              // Url
+				// moved into layout view in order to handle vars in loops
 
 				// load the layout view
 				require get_template_directory() . '/template-parts/acf-3column.php';
@@ -133,10 +117,10 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == 'constellation' ) :
 
 				// pull and sanitize vars
-
+				// moved into layout view in order to handle vars in loops
 
 				// load the layout view
-				#require get_template_directory() . '/template-parts/acf-constellation.php';
+				require get_template_directory() . '/template-parts/acf-constellation.php';
 
 			endif; // get_row_layout : constellation
 

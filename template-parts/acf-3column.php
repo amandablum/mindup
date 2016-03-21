@@ -9,53 +9,37 @@
 <section class="acf 3column">
 	<div class="container">
 
-		<div class="tab1">
-			<p><?php echo $three_col_headline1; ?></p>
+	<?php
+	// lets make a loop to save on the redundancy
+	$max_tabs = 5; // max number of tabs/cols in acf
+	for ( $tab = 1; $tab <= $max_tabs; $tab++ ) :
+		// pull and sanitize vars
+		$three_col_headline = sanitize_text_field( get_sub_field( '3col_headline' . $tab ) ); // Text
+		$three_col_image    = get_sub_field( '3col_image' . $tab );                           // Image
+		$three_col_copy     = wp_kses_post( get_sub_field( '3col_copy' . $tab ) );            // Text Area
+		$three_col_ctacopy  = sanitize_text_field( get_sub_field( '3col_ctacopy' . $tab ) );  // Text
+		$three_col_ctalink  = esc_url( get_sub_field( '3col_ctalink' . $tab ) );              // Url
+		#var_dump( $tabs, $three_col_headline, $three_col_image, $three_col_copy, $three_col_ctacopy, $three_col_ctalink );
+	?>
 
-			<img class="image-responsive" src="<?php echo $three_col_image1['url']; ?>" alt="">
+		<div class="tab<?php echo $tab; ?>">
+			<p><?php echo $three_col_headline; ?></p>
 
-			<p><?php echo $three_col_copy1; ?></p>
+			<img class="image-responsive" src="<?php echo $three_col_image['url']; ?>" alt="">
 
-			<?php
-			if ( $three_col_ctacopy1 && $three_col_ctalink1 ) : ?>
-
-				<p><a href="<?php echo $three_col_ctalink1; ?>" class="btn"><?php echo $three_col_ctacopy1; ?></a></p>
-
-			<?php
-			endif; ?>
-		</div>
-
-		<div class="tab2">
-			<p><?php echo $three_col_headline2; ?></p>
-
-			<img class="image-responsive" src="<?php echo $three_col_image2['url']; ?>" alt="">
-
-			<p><?php echo $three_col_copy2; ?></p>
+			<p><?php echo $three_col_copy; ?></p>
 
 			<?php
-			if ( $three_col_ctacopy2 && $three_col_ctalink2 ) : ?>
+			if ( $three_col_ctacopy && $three_col_ctalink ) : ?>
 
-				<p><a href="<?php echo $three_col_ctalink2; ?>" class="btn"><?php echo $three_col_ctacopy2; ?></a></p>
+				<p><a href="<?php echo $three_col_ctalink; ?>" class="btn"><?php echo $three_col_ctacopy; ?></a></p>
 
 			<?php
 			endif; ?>
 		</div>
 
-		<div class="tab3">
-			<p><?php echo $three_col_headline3; ?></p>
-
-			<img class="image-responsive" src="<?php echo $three_col_image3['url']; ?>" alt="">
-
-			<p><?php echo $three_col_copy3; ?></p>
-
-			<?php
-			if ( $three_col_ctacopy3 && $three_col_ctalink3 ) : ?>
-
-				<p><a href="<?php echo $three_col_ctalink3; ?>" class="btn"><?php echo $three_col_ctacopy3; ?></a></p>
-
-			<?php
-			endif; ?>
-		</div>
+	<?php
+	endfor; ?>
 
 	</div>
 </section>
