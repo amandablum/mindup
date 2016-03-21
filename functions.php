@@ -94,11 +94,8 @@ add_action( 'after_setup_theme', 'mindup_content_width', 0 );
 function mindup_scripts() {
 
 	wp_enqueue_style( 'mindup-style', get_stylesheet_uri() );
-
 	wp_enqueue_script( 'mindup-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'mindup-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -107,30 +104,14 @@ function mindup_scripts() {
 add_action( 'wp_enqueue_scripts', 'mindup_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * Some Assembly Required
  */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
+require get_template_directory() . '/inc/acf-layouts.php';   // ACF functions and layouts for general use
+require get_template_directory() . '/inc/custom-header.php'; // Implement the Custom Header feature
+require get_template_directory() . '/inc/template-tags.php'; // Custom template tags for this theme
+require get_template_directory() . '/inc/extras.php';        // Custom functions that act independently of the theme templates
+require get_template_directory() . '/inc/customizer.php';    // Customizer additions
+require get_template_directory() . '/inc/jetpack.php';       // Load Jetpack compatibility file
 
 /**
  * Mindup Widget Areas
@@ -143,33 +124,33 @@ if ( ! function_exists( 'mindup_sidebars' ) ) :
 function mindup_sidebars() {
 
 	$args = array(
-		'id'            => 'footercol1',
-		'class'         => 'foot1',
-		'name'          => __( 'Footer Column 1', 'text_domain' ),
-		'description'   => __( 'The leftmost column in the footer. ', 'text_domain' ),
+		'id'          => 'footercol1',
+		'class'       => 'foot1',
+		'name'        => __( 'Footer Column 1', 'mindup' ),
+		'description' => __( 'The leftmost column in the footer. ', 'mindup' ),
 	);
 	register_sidebar( $args );
 
 	$args = array(
-		'id'            => 'footercol4',
-		'class'         => 'foot4',
-		'name'          => __( 'Footer Column 4', 'text_domain' ),
-		'description'   => __( 'The rightmost column in the footer. ', 'text_domain' ),
+		'id'          => 'footercol4',
+		'class'       => 'foot4',
+		'name'        => __( 'Footer Column 4', 'mindup' ),
+		'description' => __( 'The rightmost column in the footer. ', 'mindup' ),
 	);
 	register_sidebar( $args );
 
 	$args = array(
-		'id'            => 'footbottom',
-		'class'         => 'footbot',
-		'name'          => __( 'Footer Bottom', 'text_domain' ),
-		'description'   => __( 'This is the footer at the bottom of the page, containing the 501c3 Disclaimer', 'text_domain' ),
+		'id'          => 'footbottom',
+		'class'       => 'footbot',
+		'name'        => __( 'Footer Bottom', 'mindup' ),
+		'description' => __( 'This is the footer at the bottom of the page, containing the 501c3 Disclaimer', 'mindup' ),
 	);
 	register_sidebar( $args );
 
 	$args = array(
-		'id'            => 'fullwidthtemplatesidebar',
-		'name'          => __( 'Full Width Template Sidebar', 'text_domain' ),
-		'description'   => __( 'You see this sidebar on pages using the Full Width with Sidebar Page Template. ', 'text_domain' ),
+		'id'          => 'fullwidthtemplatesidebar',
+		'name'        => __( 'Full Width Template Sidebar', 'mindup' ),
+		'description' => __( 'You see this sidebar on pages using the Full Width with Sidebar Page Template. ', 'mindup' ),
 	);
 	register_sidebar( $args );
 
