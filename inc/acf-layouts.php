@@ -42,13 +42,13 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == '2_column_' ) :
 
 				// pull and sanitize vars
-				$two_col_video_or_imageleft = get_sub_field( '2col_video_or_imageleft' );                   // Radio - image || video
-				$two_col_videoleft          = get_sub_field( '2col_videoleft' );                            // oEmbed
-				$two_col_imageleft          = get_sub_field( '2col_imageleft' );                            // Image
-				$two_col_headlineright      = sanitize_text_field( get_sub_field( '2col_headlineright' ) ); // Text
-				$two_col_copyright          = wp_kses_post( get_sub_field( '2col_copyright' ) );            // Text Area
-				$two_col_ctacopyright       = sanitize_text_field( get_sub_field( '2col_ctacopyright' ) );  // Text
-				$two_col_ctalinkright       = esc_url( get_sub_field( '2col_ctalinkright' ) );              // Url
+				$two_col_video_or_imageleft = get_sub_field( '2col_video_or_imageleft' );                         // Radio - image || video
+				$two_col_videoleft          = get_sub_field( '2col_videoleft' );                                  // oEmbed
+				$two_col_imageleft          = get_sub_field( '2col_imageleft' );                                  // Image
+				$two_col_headlineright      = sanitize_text_field( get_sub_field( '2col_headlineright' ) );       // Text
+				$two_col_copyright          = apply_filters( 'the_content' , get_sub_field( '2col_copyright' ) ); // Text Area
+				$two_col_ctacopyright       = sanitize_text_field( get_sub_field( '2col_ctacopyright' ) );        // Text
+				$two_col_ctalinkright       = esc_url( get_sub_field( '2col_ctalinkright' ) );                    // Url
 
 				// load the layout view
 				require get_template_directory() . '/template-parts/acf-2column-leftmedia-rightcopy.php';
@@ -62,13 +62,13 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == '2_column_copy_left_imagevideo_right' ) :
 
 				// pull and sanitize vars
-				$two_col_video_or_imageright = get_sub_field( '2col_video_or_imageright' );                 // Radio - image || video
-				$two_col_videoright          = get_sub_field( '2col_videoright' );                          // oEmbed
-				$two_col_imageright          = get_sub_field( '2col_imageright' );                          // Image
-				$two_col_headlineleft        = sanitize_text_field( get_sub_field( '2col_headlineleft' ) ); // Text
-				$two_col_copyleft            = wp_kses_post( get_sub_field( '2col_copyleft' ) );            // Text Area
-				$two_col_ctacopyleft         = sanitize_text_field( get_sub_field( '2col_ctacopyleft' ) );  // Text
-				$two_col_ctalinkleft         = esc_url( get_sub_field( '2col_ctalinkleft' ) );              // Url
+				$two_col_video_or_imageright = get_sub_field( '2col_video_or_imageright' );                       // Radio - image || video
+				$two_col_videoright          = get_sub_field( '2col_videoright' );                                // oEmbed
+				$two_col_imageright          = get_sub_field( '2col_imageright' );                                // Image
+				$two_col_headlineleft        = sanitize_text_field( get_sub_field( '2col_headlineleft' ) );       // Text
+				$two_col_copyleft            = apply_filters( 'the_content' , get_sub_field( '2col_copyleft' ) ); // Text Area
+				$two_col_ctacopyleft         = sanitize_text_field( get_sub_field( '2col_ctacopyleft' ) );        // Text
+				$two_col_ctalinkleft         = esc_url( get_sub_field( '2col_ctalinkleft' ) );                    // Url
 
 				// load the layout view
 				require get_template_directory() . '/template-parts/acf-2column-leftcopy-rightmedia.php';
@@ -96,10 +96,10 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == 'centered_copy' ) :
 
 				// pull and sanitize vars
-				$centered_headline = sanitize_text_field( get_sub_field( 'centered_headline' ) ); // Text
-				$centered_copy     = wp_kses_post( get_sub_field( 'centered_copy' ) );            // Wysiwyg Editor
-				$centered_cta_copy = sanitize_text_field( get_sub_field( 'centered_cta_copy' ) ); // Text
-				$centered_cta_link = esc_url( get_sub_field( 'centered_cta_link' ) );             // Url
+				$centered_headline = sanitize_text_field( get_sub_field( 'centered_headline' ) );       // Text
+				$centered_copy     = apply_filters( 'the_content' , get_sub_field( 'centered_copy' ) ); // Wysiwyg Editor
+				$centered_cta_copy = sanitize_text_field( get_sub_field( 'centered_cta_copy' ) );       // Text
+				$centered_cta_link = esc_url( get_sub_field( 'centered_cta_link' ) );                   // Url
 
 				// load the layout view
 				require get_template_directory() . '/template-parts/acf-centeredcopy.php';
