@@ -38,6 +38,9 @@ function mindup_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'mindup' ),
+                'header-right' => __( 'Header Right', 'mindup' ),
+                'footer-1' => __( 'Footer 1', 'mindup' ),
+                'footer-2' => __( 'Footer 2', 'mindup' )
 	) );
 
 	/*

@@ -17,6 +17,41 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
+
+
+
+/* Font reference
+
+
+font-family: 'Permanent Marker', cursive;
+	weight: 400
+font-family: 'Open Sans', sans-serif;
+	weights: 300,400,600,700
+font-family: 'Raleway', sans-serif;
+	weight: 500
+
+* 4px    	0.25rem
+* 8px		0.5rem
+* 10px		0.625rem
+* 12px		0.75rem
+* 14px		0.875rem
+* 16px		1rem
+* 18px		1.125rem
+* 20px		1.25rem
+* 22px		1.375rem
+* 24px		1.5rem
+* 32px		2rem
+* 36px		2.25rem
+* 48px		3rem
+* 64px		4rem
+* 72px		4.5rem
+
+
+
+*/
+
+
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -269,7 +304,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -283,6 +318,14 @@ h5,
 h6 {
 	clear: both;
 }
+
+h1 {
+	color: #474e5d;
+	font-size: 2.25rem; 
+	font-weight: 400;
+}
+
+
 
 p {
 	margin-bottom: 1.5em;
@@ -420,25 +463,21 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	border: 0px;
+	border-radius: 10px;
+	background: #fcb54d;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	text-transform: uppercase;
+	color: #fff;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
 button:focus,
@@ -449,8 +488,6 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 input[type="text"],
@@ -469,9 +506,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	color: inherit;
+	border: 1px solid #96d7f1;
+	border-radius: 0;
+	background: #d0edf9;
 }
 
 select {
@@ -520,6 +558,77 @@ textarea {
 	width: 100%;
 }
 
+
+
+/*--------------------------------------------------------------
+# Header Layout
+--------------------------------------------------------------*/
+.site-description {
+	display: none;
+}
+
+.site-branding {
+	display: inline;
+	float: left;
+	margin-top: 20px;
+}
+
+div.menu-header-right-nav-container {
+	margin-bottom: 92px;
+}
+
+ul#menu-header-right-nav {
+}
+
+ul#menu-header-right-nav li {
+	text-align: right;
+	float: none;
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+ul#menu-header-right-nav li a {
+	text-transform: none;
+}
+
+.site-header {
+	margin-bottom: 50px;
+}
+
+/*--------------------------------------------------------------
+# Page Content Layout
+--------------------------------------------------------------*/
+#page {
+	max-width: 1150px;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+}
+
+/*--------------------------------------------------------------
+# Footer Layout
+--------------------------------------------------------------*/
+.site-footer {
+	background: #22abe1;
+	border-top: 1px solid #89d2ef;
+	padding: 50px 0;
+	color: #474e5d;
+}
+
+.site-footer li.widget {
+	list-style-type: none;
+}
+
+.site-footer li.widget_text {
+	font-size: 0.625rem;
+}
+
+.site-footer li#text-3 {
+	border-top: 1px solid #3ab4e4;
+	padding-top: 26px;
+	font-weight: 600;
+}
+
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -528,6 +637,10 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	color: royalblue;
+	outline: 0;
+        -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
 }
 
 a:visited {
@@ -538,10 +651,14 @@ a:hover,
 a:focus,
 a:active {
 	color: midnightblue;
+	outline: 0;
+        -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: 0;
 }
 
 a:hover,
@@ -553,10 +670,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	float: right;
 }
 
 .main-navigation ul {
@@ -569,11 +683,19 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	margin: 0 45px 0 0;
+	font-size: 1.125rem;
+}
+
+.main-navigation li:last-child {
+	margin-right: 0;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #324459;
+	text-transform: uppercase;
 }
 
 .main-navigation ul ul {
@@ -620,10 +742,14 @@ a:active {
 	left: 100%;
 }
 
+.main-navigation a:hover,
+.main-navigation a:active,
+.main-navigation a:focus,
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+	color: #fcb54d;
 }
 
 /* Small menu. */

@@ -14,9 +14,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-
-			<span class="sep">  </span>
-
+			<img src="<?php echo get_stylesheet_directory_uri().'/images/logo-footer.gif' ; ?>">
+			<?php dynamic_sidebar('footercol1'); ?>
+			<?php dynamic_sidebar('footercol4'); ?>
+			<?php dynamic_sidebar('footbottom'); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
