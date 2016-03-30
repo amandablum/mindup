@@ -10,7 +10,7 @@
 <section class="acf centeredcopy">
 	<div class="container">
 
-		<p><?php echo $centered_headline; ?></p>
+		<h2><?php echo $centered_headline; ?></h2>
 
 		<p><?php echo $centered_copy; ?></p>
 

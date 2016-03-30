@@ -7,22 +7,22 @@
  */
 ?>
 
-<section class="acf 1columnhero">
-	<div class="container">
+<section class="acf onecolumnhero">
 
-		<?php
-		if ( $hero_videoorimage == 'video' ) : ?>
-
+	<?php
+	if ( $hero_videoorimage == 'video' ) : ?>
+		<div class="container">
 			<div class="embed-container">
 				<?php echo $hero_video; ?>
 			</div>
+		</div>
 
-		<?php
-		elseif ( $hero_videoorimage == 'image' ) : ?>
+	<?php
+	elseif ( $hero_videoorimage == 'image' ) : ?>
+		<div class="container" style="background-image: url(<?php echo $hero_image['url']; ?>);">
+			<!-- <img class="image-responsive" src="<?php echo $hero_image['url']; ?>" alt=""> -->
 
-			<img class="image-responsive" src="<?php echo $hero_image['url']; ?>" alt="">
-
-			<p><?php echo $hero_headline; ?></p>
+			<h1><?php echo $hero_headline; ?></h1>
 
 			<p><?php echo $hero_copy; ?></p>
 
@@ -31,10 +31,10 @@
 
 				<p><a href="<?php echo $hero_cta_link; ?>" class="btn"><?php echo $hero_cta_copy; ?></a></p>
 
-			<?php
-			endif;
+			<?php 
+			endif; ?>
+		</div>
+	<?php 
+	endif; ?>
 
-		endif; ?>
-
-	</div>
 </section>

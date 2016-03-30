@@ -24,11 +24,11 @@
 	?>
 		<div class="tab<?php echo $const; ?>">
 
-			<p><?php echo $const . " of " . $max_const; ?></p>
+			<p>why is this here? <?php echo $const . " of " . $max_const; ?></p>
 
-			<p><?php echo $const_label; ?></p>
+			<h3><?php echo $const_label; ?></h3>
 
-			<img class="image-responsive" src="<?php echo $const_icon['url']; ?>" alt="">
+			<p><img class="image-responsive" src="<?php echo $const_icon['url']; ?>" alt=""></p>
 
 			<p><?php echo $const_copy; ?></p>
 

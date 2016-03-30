@@ -7,10 +7,10 @@
  */
 ?>
 
-<section class="acf 2column-leftmedia-rightcopy">
+<section class="acf twocolumn-leftmedia-rightcopy">
 	<div class="container">
 
-		<div class="2column-leftmedia">
+		<div class="twocolumn-leftmedia">
 			<?php
 			if ( $two_col_video_or_imageleft == 'video' ) : ?>
 
@@ -26,9 +26,9 @@
 			<?php
 			endif; ?>
 		</div>
-		<div class="2column-rightcopy">
+		<div class="twocolumn-rightcopy">
 
-			<p><?php echo $two_col_headlineright; ?></p>
+			<h2><?php echo $two_col_headlineright; ?></h2>
 
 			<p><?php echo $two_col_copyright; ?></p>
 

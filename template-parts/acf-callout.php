@@ -10,7 +10,7 @@
 <section class="acf callout">
 	<div class="container">
 
-		<p><?php echo $callout_headline; ?></p>
+		<h3><?php echo $callout_headline; ?></h3>
 
 		<p><?php echo $call_out_copy; ?></p>
 

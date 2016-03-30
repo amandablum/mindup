@@ -153,7 +153,7 @@ function mindup_sidebars() {
 	$args = array(
 		'id'          => 'fullwidthtemplatesidebar',
 		'name'        => __( 'Full Width Template Sidebar', 'mindup' ),
-		'description' => __( 'You see this sidebar on pages using the Full Width with Sidebar Page Template. ', 'mindup' ),
+		'description' => __( 'You see this sidebar on pages using the Full Width with Sidebar Page Template.', 'mindup' ),
 	);
 	register_sidebar( $args );
 
@@ -161,3 +161,27 @@ function mindup_sidebars() {
 add_action( 'widgets_init', 'mindup_sidebars' );
 
 endif;
+
+
+
+
+
+
+function mindup_mce_mod( $init ) {
+        $style_formats = array (
+                array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
+                array( 'title' => 'blockquote', 'block' => 'blockquote' ),
+                array( 'title' => 'pullquote', 'block' => 'blockquote', 'classes' => 'pullquote' ),
+                array( 'title' => 'button link', 'inline' => 'a', 'classes' => 'btn' ),
+        );
+        $init['style_formats'] = json_encode( $style_formats );
+        $init['style_formats_merge'] = false;
+        return $init;
+}
+add_filter('tiny_mce_before_init', 'mindup_mce_mod');
+
+function mindup_mce_add_buttons( $buttons ){
+    array_splice( $buttons, 1, 0, 'styleselect' );
+    return $buttons;
+}
+add_filter( 'mce_buttons_2', 'mindup_mce_add_buttons' );
