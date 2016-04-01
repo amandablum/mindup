@@ -17,7 +17,7 @@ get_header(); ?>
 		<img src="/wp-content/uploads/2016/03/daff-768x576.jpg">
 		<h2>This is the first news post.</h2>
 		<div class="entry-meta">
-			<span class="byline"> BY <span class="author vcard"><a class="url fn n" href="http://dev1.dapperdigital.net/author/amanda/">amanda</a></span></span> | <span class="posted-on"><time class="entry-date published" datetime="2016-03-15T21:10:09+00:00">March 15, 2016</time><time class="updated" datetime="2016-03-31T13:53:35+00:00">March 31, 2016</time></span>		
+			<span class="byline"> BY <span class="author vcard">Amanda</span></span> | <span class="posted-on"><time class="entry-date published" datetime="2016-03-15T21:10:09+00:00">March 15, 2016</time><time class="updated" datetime="2016-03-31T13:53:35+00:00">March 31, 2016</time></span>		
 		</div><!-- .entry-meta -->
 
 	        <div class="entry-content">

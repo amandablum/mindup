@@ -32,7 +32,8 @@ function mindup_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'BY %s', 'post author', 'mindup' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		//'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
 	);
 
 	echo '<span class="byline"> ' . $byline . '</span> | <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -56,7 +57,7 @@ function mindup_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'mindup' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'mindup' ) . '</span> | ', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'mindup' ) . '</span> | ', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
@@ -66,13 +67,18 @@ function mindup_entry_footer() {
 		echo '</span> | ';
 	}
 
+
+	if ( ! is_single() ) {
+		echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">Read More ></a>';
+	}
+
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
 			esc_html__( 'Edit %s', 'mindup' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link">',
+		' | <span class="edit-link">',
 		'</span>'
 	);
 }

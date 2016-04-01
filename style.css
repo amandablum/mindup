@@ -660,17 +660,36 @@ h1.hero {
 	width: 100%;
 }
 
+.entry-content p:first-child {
+	margin-top: 0;
+}
+
 body.page-template-tpl-fullwidthsidebar h1.hero {
 	padding-top: 70px;
 }
 
+body.page-template-tpl-fullwidth .entry-content,
+body.page-template-tpl-fullwidthsidebar .entry-content {
+	margin-top: 0;
+}
+
+body.page-template-tpl-fullwidthsidebar h1.entry-title {
+        display: none;
+}
+
+body.page-template-tpl-fullwidth h1.entry-title,
+body.page-template-tpl-fullwidthsidebar h1.entry-title {
+	display: none;
+}
+
+
 body.page-template-tpl-fullwidthsidebar #primary {
-	width: 845px;
+	width: 74%;
 	float: left;
 }
 
 body.page-template-tpl-fullwidthsidebar #secondary {
-	width: 305px;
+	width: 26%;
 	float: right;
 	padding-left: 40px;
 }
@@ -737,15 +756,17 @@ body.page-template-tpl-fullwidthsidebar #secondary {
 
 body.single #secondary,
 body.blog #secondary {
-	width: 295px;
+	width: 26%;
 	float: left;
+	padding-right: 14px;
 }
 
 body.single #primary,
 body.blog #primary {
-	width: 855px;
+	width: 74%;
 	float: right;
 	padding-left: 25px;
+	border-left: 1px solid #e1e1e1;
 }
 
 
@@ -865,11 +886,46 @@ body.archive.category-news #secondary {
 	display: none;
 }
 
+#secondary .search-form input[type="search"]::-webkit-input-placeholder {
+	color: #fcb54d;
+	text-align: center;
+}
+
+#secondary .search-form input[type="search"]:-moz-placeholder {
+	color: #fcb54d;
+   	opacity:  1;
+	text-align: center;
+}
+
+#secondary .search-form input[type="search"]::-moz-placeholder {
+	color: #fcb54d;
+   	opacity:  1;
+	text-align: center;
+}
+
+#secondary .search-form input[type="search"]:-ms-input-placeholder {
+	color: #fcb54d;
+	text-align: center;
+}
 
 
 
 
 /* news archive template */
+
+
+body.single h1.entry-title {
+	margin: 0 0 5px 0;
+}
+
+body.single .entry-content {
+	margin-top: 0;
+}
+
+.entry-footer { 
+	margin-top: 15px; 
+	color: #fcb54d; 
+}
 
 .hero-post {
 	margin-bottom: 55px;
@@ -891,35 +947,108 @@ body.archive.category-news #secondary {
 .hero-post .entry-footer {
 	font-size: 0.875rem;
 	color: #fcb54d;
+	margin-top: 0;
 }
 
 .hero-post .entry-footer a {
 	text-transform: none !important;
 }
-	
-body.archive article div.thumbnail {
-	width: 25%;
+
+.three-hero-posts {
+    	border-bottom: 2px solid #e1e1e1;
+    	margin-bottom: 25px;
+	display: inline-block;
+}
+
+.three-hero-posts .hero-one {
+	width: 60%;
+	padding-right: 40px;
 	float: left;
 }
 
-body.archive .content .entry-meta {
+.entry-footer {
+	font-size: 0.875rem;
+}
+
+.three-hero-posts .hero-two,
+.three-hero-posts .hero-three {
+	width: 40%;
+	float: right;
+	padding-bottom: 10px;
+}
+
+.three-hero-posts .hero-two .entry-meta,
+.three-hero-posts .hero-three .entry-meta,
+.three-hero-posts .hero-two .entry-content,
+.three-hero-posts .hero-three .entry-content,
+.three-hero-posts .hero-two .entry-footer,
+.three-hero-posts .hero-three .entry-footer {
 	display: none;
 }
 
-body.archive .content .entry-content {
+.three-hero-posts .hero-one h2 {
+	font-size: 2rem;
+	margin: 10px 0 0 0;
+}
+
+.three-hero-posts .hero-two h2,
+.three-hero-posts .hero-three h2 {
+	font-size: 1.5rem;
+	margin-top: 10px;
+}
+
+.three-hero-posts .hero-one .entry-content,
+.three-hero-posts .hero-one .entry-footer {
 	margin-top: 0;
 }
 
-body.archive .content .entry-footer {
-	margin-top: 35px;
-}
 	
-body.archive article div.content {
-	width: 75%;
-	float: right;
+article div.thumbnail {
+	width: 30%;
+	float: left;
+	padding-right: 22px;
 }
 
-body.archive article {
+article div.content {
+        width: 70%;
+        float: right;
+}
+
+body.archive div.thumbnail {
+	width: 25%;
+}
+
+body.archive div.content {
+	width: 75%;
+}
+
+body.archive .content .entry-meta,
+body.blog .content .entry-meta {
+	display: none;
+}
+
+.entry-meta {
+	font-size: 0.875rem;
+}
+
+.entry-meta .author {
+	font-weight: 700;
+}
+
+.entry-meta .posted-on {
+	text-transform: uppercase;
+}
+
+body.archive .content .entry-content,
+body.blog .content .entry-content {
+	margin-top: 0;
+}
+
+#primary .entry-footer a {
+	text-transform: none;
+}
+
+article {
 	display: inline-block;
 	clear: both;
 	width: 100%;
@@ -928,7 +1057,7 @@ body.archive article {
 	margin-bottom: 20px;
 }
 
-body.archive article h2.entry-title {
+article h2.entry-title {
 	margin: 0;
 	font-size: 1.5rem;
 }
@@ -969,6 +1098,15 @@ body.archive article h2.entry-title {
 	padding-bottom: 0;
 }
 
+
+.post-navigation .nav-links {
+	display: none;
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Pagebuilder
 --------------------------------------------------------------*/
@@ -988,6 +1126,10 @@ body.archive article h2.entry-title {
 
 .acf {
 	clear: both;
+}
+
+.acf h2 {
+	margin-top: 0;
 }
 
 .onecolumnhero .container {
@@ -1137,6 +1279,7 @@ body.archive article h2.entry-title {
 	font-weight: 400;
 	letter-spacing: .5rem;
 	line-height: 120%;
+	color: #324459;
 }
 
 .callout p {
@@ -1825,3 +1968,72 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+
+
+/*--------------------------------------------------------------
+## Responsive Media Queries
+--------------------------------------------------------------*/
+
+@media (max-width: 767px) {
+	/* extra small grid */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	/* small grid */
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	/* medium grid */
+
+	h1.hero {
+        	padding: 140px 10px 0px 10px;
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+	}
+
+	body.page-template-tpl-fullwidthsidebar h1.hero {
+        	padding-top: 40px;
+	}
+
+	.three-hero-posts .hero-one {
+		width: 100%;
+	}
+
+	.three-hero-posts .hero-two,
+	.three-hero-posts .hero-three {
+		margin-top: 40px;
+		width: 48%;
+		float: left;
+	}
+
+	.three-hero-posts .hero-two {
+		padding-right: 2%;
+	}
+
+	.three-hero-posts .hero-three {
+		padding-left: 2%;
+	}
+
+	.onecolumnhero h1 {
+		padding-top: 80px;
+		font-size: 2.75rem;
+	}
+
+	.onecolumnhero p {
+		font-size: 1.5rem;
+	}
+	
+}
+
+
+@media (min-width: 1200px) {
+	/* large */
+}
+
+@media print {
+	/* do we want to do anything here? */
+}
+
