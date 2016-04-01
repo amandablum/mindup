@@ -28,6 +28,8 @@ get_header(); ?>
 		<?php
 		endif;
 
+                query_posts('cat=-1'); // exclude News category
+
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
@@ -47,6 +49,25 @@ get_header(); ?>
 		get_template_part( 'template-parts/content', 'none' );
 
 	endif; ?>
+
+<?php
+echo '<div id="pagination">';
+global $wp_query;
+$big = 999999999; // need an unlikely integer
+
+echo paginate_links( array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $wp_query->max_num_pages,
+        'next_text' => '>>',
+        'prev_text' => '',
+        'mid_size' => 3
+) );
+echo '</div> <!-- end pagination -->';
+
+?>
+
 
 	</main><!-- #main -->
 </div><!-- #primary -->

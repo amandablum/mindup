@@ -32,7 +32,7 @@ if ( ! is_active_sidebar( 'fullwidthtemplatesidebar' ) ) {
 
 
 
-<?php if ( is_single() || is_archive() )  { ?>
+<?php if ( is_single() || is_archive() || is_home() )  { ?>
 
 
 <aside id="secondary" class="widget-area" role="complementary">

@@ -12,17 +12,29 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
+
+        <div class="hero-post">
+                <img src="/wp-content/uploads/2016/03/daff-768x576.jpg">
+                <h2>This is the first news post.</h2>
+                <div class="entry-meta">
+                        <span class="byline"> BY <span class="author vcard"><a class="url fn n" href="http://dev1.dapperdigital.net/author/amanda/">amanda</a></span></span> | <span class="posted-on"><time class="entry-date published" datetime="2016-03-15T21:10:09+00:00">March 15, 2016</time><time class="updated" datetime="2016-03-31T13:53:35+00:00">March 31, 2016</time></span>
+                </div><!-- .entry-meta -->
+
+                <div class="entry-content">
+                        <p>Asymmetrical shoreditch affogato, cred plaid 8-bit pour-over. Meditation thundercats mixtape, paleo bushwick occupy sriracha DIY wolf ennui freegan leggings offal post-ironic.</p>
+                </div><!-- .entry-content -->
+
+                <footer class="entry-footer">
+                        <?php mindup_entry_footer(); ?>
+                </footer><!-- .entry-footer -->
+        </div> <!-- /hero post -->
+
+
 	<?php
 	if ( have_posts() ) : ?>
 
-		<header class="page-header">
-			<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-			?>
-		</header><!-- .page-header -->
-
 		<?php
+
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
