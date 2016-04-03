@@ -33,7 +33,7 @@
 			<?php
 			if ( $three_col_ctacopy && $three_col_ctalink ) : ?>
 
-				<p><a href="<?php echo $three_col_ctalink; ?>" class="btn"><?php echo $three_col_ctacopy; ?></a></p>
+				<p><a href="<?php echo $three_col_ctalink; ?>"><?php echo $three_col_ctacopy; ?></a></p>
 
 			<?php
 			endif; ?>

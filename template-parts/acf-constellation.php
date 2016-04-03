@@ -24,21 +24,22 @@
 	?>
 		<div class="tab<?php echo $const; ?>">
 
-			<p>why is this here? <?php echo $const . " of " . $max_const; ?></p>
+			<?php 
+			//echo $const . " of " . $max_const; 
+			?>
 
 			<h3><?php echo $const_label; ?></h3>
 
-			<p><img class="image-responsive" src="<?php echo $const_icon['url']; ?>" alt=""></p>
+			<p class="image"><img class="image-responsive" src="<?php echo $const_icon['url']; ?>" alt=""></p>
 
-			<p><?php echo $const_copy; ?></p>
+			<p class="circle"><?php echo $const_copy; ?>
 
 			<?php
-			if ( $const_ctacopy && $const_ctalink ) : ?>
-
-				<p><a href="<?php echo $const_ctalink; ?>" class="btn"><?php echo $const_ctacopy; ?></a></p>
-
+			if ( $const_ctacopy && $const_ctalink ) : ?> 
+				<a href="<?php echo $const_ctalink; ?>"><?php echo $const_ctacopy; ?> »</a>
 			<?php
 			endif; ?>
+			</p>
 		</div>
 	<?php
 	endfor; ?>

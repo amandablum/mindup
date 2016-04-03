@@ -43,75 +43,65 @@ if ( ! is_active_sidebar( 'fullwidthtemplatesidebar' ) ) {
 
 
 <ul class="tabs">
-        <li>
-          <input type="radio" checked name="tabs" id="tab1">
-          <label for="tab1">Popular</label>
-          <div id="tab-content1" class="tab-content animated fadeIn">
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
-                </div>
-
-
-
-
-          </div>
-        </li>
-        <li>
-          <input type="radio" name="tabs" id="tab2">
-          <label for="tab2">Recent</label>
-          <div id="tab-content2" class="tab-content animated fadeIn">
-
-
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
-                </div>
-                <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
-                </div>
-
-
-          </div>
-        </li>
+    	<li><a href="#tab1">Popular</a></li>
+    	<li><a href="#tab2">Recent</a></li>
 </ul>
+<div id="tab1">
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                </div>
+
+</div>
+<div id="tab2">
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                </div>
+                <div class="postList">
+                        <img src="/wp-content/uploads/2016/03/2.png">
+                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                </div>
+</div>
+
+
+
 
 
 </aside><!-- #secondary -->

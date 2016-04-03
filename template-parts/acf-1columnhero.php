@@ -11,7 +11,7 @@
 
 	<?php
 	if ( $hero_videoorimage == 'video' ) : ?>
-		<div class="container">
+		<div class="container video">
 			<div class="embed-container">
 				<?php echo $hero_video; ?>
 			</div>
@@ -19,7 +19,7 @@
 
 	<?php
 	elseif ( $hero_videoorimage == 'image' ) : ?>
-		<div class="container" style="background-image: url(<?php echo $hero_image['url']; ?>);">
+		<div class="container image" style="background-image: url(<?php echo $hero_image['url']; ?>);">
 			<!-- <img class="image-responsive" src="<?php echo $hero_image['url']; ?>" alt=""> -->
 
 			<h1><?php echo $hero_headline; ?></h1>

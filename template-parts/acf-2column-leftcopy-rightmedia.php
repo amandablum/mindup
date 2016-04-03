@@ -8,38 +8,39 @@
 ?>
 
 <section class="acf twocolumn-leftcopy-rightmedia">
-	<div class="container">
+        <div class="container">
 
-		<div class="twocolumn-leftcopy">
+                <div class="twocolumn-rightmedia">
+                        <?php
+                        if ( $two_col_video_or_imageright == 'video' ) : ?>
 
-			<h2><?php echo $two_col_headlineleft; ?></h2>
+                                <div class="embed-container">
+                                        <?php echo $two_col_videoright; ?>
+                                </div>
 
-			<p><?php echo $two_col_copyleft; ?></p>
+                        <?php
+                        elseif ( $two_col_video_or_imageright == 'image' ) : ?>
 
-			<?php
-			if ( $two_col_ctacopyleft && $two_col_ctalinkleft ) : ?>
+                                <img class="image-responsive" src="<?php echo $two_col_imageright['url']; ?>" alt="">
 
-				<p><a href="<?php echo $two_col_ctalinkleft; ?>" class="btn"><?php echo $two_col_ctacopyleft; ?></a></p>
+                        <?php
+                        endif; ?>
+                </div>
 
-			<?php
-			endif; ?>
-		</div>
-		<div class="twocolumn-rightmedia">
-			<?php
-			if ( $two_col_video_or_imageright == 'video' ) : ?>
+                <div class="twocolumn-leftcopy">
 
-				<div class="embed-container">
-					<?php echo $two_col_videoright; ?>
-				</div>
+                        <h2><?php echo $two_col_headlineleft; ?></h2>
 
-			<?php
-			elseif ( $two_col_video_or_imageright == 'image' ) : ?>
+                        <p><?php echo $two_col_copyleft; ?></p>
 
-				<img class="image-responsive" src="<?php echo $two_col_imageright['url']; ?>" alt="">
+                        <?php
+                        if ( $two_col_ctacopyleft && $two_col_ctalinkleft ) : ?>
 
-			<?php
-			endif; ?>
-		</div>
+                                <p><a href="<?php echo $two_col_ctalinkleft; ?>" class="btn"><?php echo $two_col_ctacopyleft; ?></a></p>
 
-	</div>
+                        <?php
+                        endif; ?>
+                </div>
+
+        </div>
 </section>

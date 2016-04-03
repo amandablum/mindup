@@ -17,7 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Permanent+Marker|Raleway:500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Permanent+Marker|Raleway:500' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -38,9 +38,11 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-                        <?php wp_nav_menu( array( 'theme_location' => 'header-right','menu_class' => 'header-right' ) ); ?>
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mindup' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu', 'mindup' ); ?></button>
+			<div id="both-menus">
+                        	<?php wp_nav_menu( array( 'theme_location' => 'header-right','menu_class' => 'header-right' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			</div> <!-- /both-menus -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
