@@ -19,4 +19,14 @@ jQuery(document).ready(function($){
       e.preventDefault();
     });
   });
+
+$('.constellation > .container > div').hover(function() {
+        $(this).find('.image').hide();
+        $(this).find('.circle').show();
+    }, function() {
+        $(this).find('.circle').hide();
+        $(this).find('.image').show();
+});
+
+
 });

@@ -1285,9 +1285,18 @@ article h2.entry-title {
 }
 
 .constellation {
+	margin-top: 30px;
 	text-align: center;
 	background-color: #e5f7fd;
 	display: inline-block;
+	width: 100%;
+}
+
+.constellation .container {
+	margin: 40px 0;
+	padding: 250px 0;
+	position: relative;
+	height: 570px;
 }
 
 .constellation .tab1,
@@ -1298,6 +1307,121 @@ article h2.entry-title {
 	color: #fff;
 	width: 20%;
 	float: left;
+}
+
+.constellation .tab1,
+.constellation .tab2,
+.constellation .tab3,
+.constellation .tab4,
+.constellation .tab5 {
+        color: #fff;
+        float: left;
+	width: 20%;
+}
+
+
+.constellation .tab1 h3::after,
+.constellation .tab2 h3::after,
+.constellation .tab3 h3::after,
+.constellation .tab4 h3::after,
+.constellation .tab5 h3::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 45%;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 12px 0 12px;
+	border-color: #00aeef transparent transparent transparent;
+}
+
+.constellation .tab2 h3::after {
+	border-color: transparent transparent #fcb54d transparent;
+	top: -10px;
+	border-width: 0 12px 20px 12px;
+}
+
+.constellation .tab3 h3::after {
+	border-color: #66ceca transparent transparent transparent;
+}
+
+.constellation .tab4 h3::after {
+	border-color: transparent transparent #324459 transparent;
+	top: -10px;
+	border-width: 0 12px 20px 12px;
+}
+
+.constellation .tab5 h3::after {
+	border-color: #00aeed transparent transparent transparent;
+}
+
+.constellation .tab2 p.image,
+.constellation .tab2 p.circle,
+.constellation .tab4 p.image,
+.constellation .tab4 p.circle {
+	position: absolute;
+	top: 0px;
+}
+
+.constellation .tab2 p.image,
+.constellation .tab4 p.image {
+        position: absolute;
+        top: 110px;
+	margin-left: 55px;
+}
+
+.constellation .tab1 p.image,
+.constellation .tab1 p.circle,
+.constellation .tab3 p.image,
+.constellation .tab3 p.circle,
+.constellation .tab5 p.image,
+.constellation .tab5 p.circle {
+        position: absolute;
+        bottom: 0px;
+}
+
+.constellation .tab1 p.image,
+.constellation .tab3 p.image,
+.constellation .tab5 p.image {
+        position: absolute;
+        bottom: 110px;
+	margin-left: 55px;
+}
+
+.constellation .tab1 p.circle,
+.constellation .tab2 p.circle,
+.constellation .tab3 p.circle,
+.constellation .tab4 p.circle,
+.constellation .tab5 p.circle {
+    	display: none;
+}
+
+.constellation p.image {
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	padding: 20px;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+.constellation p.circle {
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        margin: 0 auto;
+        font-size: 0.875rem;
+        padding: 28px 28px;
+}
+
+.constellation p.circle a,
+.constellation p.circle a:active,
+.constellation p.circle a:hover,
+.constellation p.circle a:visited {
+        display: block;
+        color: #fff !important;
+        text-transform: none !important;
 }
 
 .constellation .tab1 h3,
@@ -1330,6 +1454,14 @@ article h2.entry-title {
 	
 }
 
+.constellation h3 {
+	position: relative;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	padding: 14px 20px;
+	text-transform: uppercase;
+}
 
 /*--------------------------------------------------------------
 # Footer Layout
@@ -2163,8 +2295,18 @@ object {
 		border-left: 0;
 	}
 
+        .constellation p.circle {
+                left: 60% !important;
+        }
 
 }
+
+@media (max-width: 500px) {
+        .constellation p.circle {
+                left: 45% !important;
+        }
+}
+
 
 @media (max-width: 991px) {
 	/* both small and xsmall */
@@ -2317,6 +2459,114 @@ object {
 		margin: 25px 0 0 0; 
 	}
 
+
+
+
+
+
+
+
+
+       .constellation .container {
+                margin: 0;
+		padding: 40px 0;
+		height: auto;
+		display: inline-block;
+		width: 100%;
+        }
+
+	.constellation .tab1, 
+	.constellation .tab2, 
+	.constellation .tab3, 
+	.constellation .tab4, 
+	.constellation .tab5 {
+		float: none;
+		width: 100%;
+		height: 190px;
+	}
+
+	.constellation h3 {
+		width: 50%;
+		float: left;
+		text-align: left;
+		margin: 0;
+		padding: 85px 20px 20px 20px;
+		height: 190px;
+	}
+
+	.constellation .tab1 h3::after, 
+	.constellation .tab2 h3::after, 
+	.constellation .tab3 h3::after, 
+	.constellation .tab4 h3::after, 
+	.constellation .tab5 h3::after {
+		top: 40%;
+		left: 100%;
+		border-width: 14px 0 14px 24px;
+	}
+
+        .constellation .tab1 h3::after {
+                border-color: transparent transparent transparent #00aeee;
+	}
+
+        .constellation .tab2 h3::after {
+                border-color: transparent transparent transparent #fcb54d;
+	}
+
+        .constellation .tab3 h3::after {
+                border-color: transparent transparent transparent #66ceca;
+	}
+
+        .constellation .tab4 h3::after {
+                border-color: transparent transparent transparent #324459;
+	}
+
+        .constellation .tab5 h3::after {
+                border-color: transparent transparent transparent #00aeed;
+
+        }
+
+        .constellation p.image {
+                width: 100px;
+                height: 100px;
+                padding: 20px;
+		margin: 20px 0 !important;
+		left: 70%;
+        }
+
+        .constellation p.circle {
+                border-radius: 50%;
+                width: 190px;
+                height: 190px;
+                font-size: 0.75rem;
+                padding: 22px;
+		margin: 0 !important;
+		left: 65%;
+        }
+
+        .constellation .tab1 p.circle,
+        .constellation .tab2 p.circle,
+        .constellation .tab3 p.circle,
+        .constellation .tab4 p.circle,
+        .constellation .tab5 p.circle {
+                top: auto;
+		bottom: auto;
+		margin-top: 0 !important;
+        }
+
+        .constellation .tab1 p.image,
+        .constellation .tab2 p.image,
+        .constellation .tab3 p.image,
+        .constellation .tab4 p.image,
+        .constellation .tab5 p.image {
+                top: auto;
+		bottom: auto;
+		margin-top: 40px !important;
+        }
+
+
+
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2421,6 +2671,55 @@ object {
                 padding-right: 60px;
         }
 
+
+	.constellation .container {
+        	margin: 40px 0;
+        	padding: 175px 0;
+        	height: 450px;
+	}
+
+        .constellation p.image {
+                width: 100px;
+                height: 100px;
+                padding: 20px;
+                padding: 20px;
+		margin-left: 5.5% !important;
+        }
+
+        .constellation p.circle {
+                border-radius: 50%;
+                width: 190px;
+                height: 190px;
+                font-size: 0.75rem;
+                padding: 22px;
+		margin-left: 1% !important;
+        }
+
+	.constellation .tab2 p.circle,
+	.constellation .tab4 p.circle {
+        	top: -30px;
+	}
+
+	.constellation .tab2 p.image,
+	.constellation .tab4 p.image {
+        	top: 60px;
+	}
+
+	.constellation .tab1 p.circle,
+	.constellation .tab3 p.circle,
+	.constellation .tab5 p.circle {
+        	bottom: -10px;
+	}
+
+	.constellation .tab1 p.image,
+	.constellation .tab3 p.image,
+	.constellation .tab5 p.image {
+        	bottom: 80px;
+	}
+
+
+
+
 }
 
 
@@ -2434,18 +2733,12 @@ object {
 		padding-right: 60px;
 	}
 
-	.constellation h3 {
-		color: #fff;
-		font-size: 1rem;
-		font-weight: 400;
-		padding: 14px 20px;
-		text-transform: uppercase;
-	}
-
+/*
 	.constellation p.image {
         	border-radius: 50%;
-		width: 140px;
-		height: 140px;
+		width: 120px;
+		height: 120px;
+		padding: 20px;
 		padding: 20px;
 		margin: 0 auto;
 	}
@@ -2467,7 +2760,7 @@ object {
 		color: #fff !important;
 		text-transform: none !important;
 	}
-
+*/
 
 
 
