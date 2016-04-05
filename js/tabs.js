@@ -21,11 +21,11 @@ jQuery(document).ready(function($){
   });
 
 $('.constellation > .container > div').hover(function() {
-        $(this).find('.image').hide();
-        $(this).find('.circle').show();
+        $(this).find('.image').hide(200);
+        $(this).find('.circle').show(200);
     }, function() {
-        $(this).find('.circle').hide();
-        $(this).find('.image').show();
+        $(this).find('.circle').hide(200);
+        $(this).find('.image').show(200);
 });
 
 

@@ -167,7 +167,7 @@ endif;
 
 
 
-
+/* mce custom mods */
 function mindup_mce_mod( $init ) {
         $style_formats = array (
                 array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
@@ -188,7 +188,21 @@ function mindup_mce_add_buttons( $buttons ){
 add_filter( 'mce_buttons_2', 'mindup_mce_add_buttons' );
 
 
+
+/* changes to the video embed container */
 function mindup_video_embed_container( $html ) { 
     return '<div class="video-container">' . $html . '</div>'; 
 } 
 add_filter( 'embed_oembed_html', 'mindup_video_embed_container', 10 );
+
+
+
+
+
+
+/* add svg support to uploads */
+function mindup_custom_upload_mimes ( $existing_mimes=array() ) {
+	$existing_mimes['svg'] = 'mime/type';
+	return $existing_mimes;
+}
+add_filter('upload_mimes', 'mindup_custom_upload_mimes');

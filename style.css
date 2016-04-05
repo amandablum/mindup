@@ -139,7 +139,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn {
@@ -328,6 +328,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	letter-spacing: -.04em;
 }
 
 h1 {
@@ -342,6 +343,10 @@ h2, h1.entry-title {
 	font-weight: 700;
 	font-weight: 800;
 	line-height: 120%;
+}
+
+h1.entry-title {
+	text-transform: capitalize;
 }
 
 h3 {
@@ -370,8 +375,15 @@ p {
 	color: #fcb54d;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-weight: 700;
+	font-weight: 800;
 }
+
+#primary a:hover,
+#primary a:active {
+	color: #f3a129;
+}
+
+
 
 dfn,
 cite,
@@ -527,12 +539,23 @@ input[type="submit"] {
 	padding: .6em 1em .4em;
 	text-transform: uppercase;
 	color: #fff;
+        -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
+/* cee */
+border-radius: 40px;
+padding: 10px 44px;
+letter-spacing: 2px;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
+	background: #f3a129;
+	-webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
 }
 
 button:focus,
@@ -543,6 +566,10 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
+	background: #f3a129;
+        -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
 }
 
 input[type="text"],
@@ -563,8 +590,12 @@ input[type="color"],
 textarea {
 	color: inherit;
 	border: 1px solid #96d7f1;
+border: 1px solid #22ABE1; 
 	border-radius: 0;
 	background: #d0edf9;
+background: #C3E8F7;
+
+
 }
 
 select {
@@ -628,8 +659,16 @@ textarea {
 	margin-top: 20px;
 }
 
+.site-branding a {
+	display: block;
+}
+
+.site-branding img {
+	width: 280px;
+}
+
 div.menu-header-right-nav-container {
-	margin-bottom: 92px;
+	margin-bottom: 91px;
 }
 
 ul#menu-header-right-nav {
@@ -737,7 +776,7 @@ body.page-template-tpl-fullwidthsidebar #secondary {
 
 #secondary h2 {
 	color: #09aae2;
-	font-weight: 700;
+	font-weight: 800;
 	font-size: 1.5rem;
 	text-transform: uppercase;
 	margin-top: 0;
@@ -757,7 +796,7 @@ body.page-template-tpl-fullwidthsidebar #secondary {
 #secondary .textwidget ol li {
 	list-style-type: none;
 	counter-increment: step-counter;
-	font-weight: 600;
+	font-weight: 700;
 	margin: 0 0 10px 0;
 	
 }
@@ -816,7 +855,7 @@ body.archive.category-news #secondary {
 	display: block;
 	color: #474e5d;
 	background: #f1f1f1;
-	padding: 15px 10px;
+	padding: 12px 10px;
 	text-align: center;
 	text-decoration: none;
 }
@@ -843,6 +882,7 @@ body.archive.category-news #secondary {
 	font-size: 1rem;
 	font-weight: 600;
 	padding-left: 20px;
+	line-height: 135%;
 }
 
 #secondary .postList {
@@ -851,6 +891,11 @@ body.archive.category-news #secondary {
 	margin-bottom: 20px;
 	clear: both;
 	display: inline-block;
+	width: 100%;
+}
+
+#secondary .postList:last-child {
+	border: 0;
 }
 
 #secondary .search-form input[type="search"] {
@@ -869,23 +914,27 @@ body.archive.category-news #secondary {
 #secondary .search-form input[type="search"]::-webkit-input-placeholder {
 	color: #fcb54d;
 	text-align: center;
+	letter-spacing: 2px;
 }
 
 #secondary .search-form input[type="search"]:-moz-placeholder {
 	color: #fcb54d;
    	opacity:  1;
 	text-align: center;
+	letter-spacing: 2px;
 }
 
 #secondary .search-form input[type="search"]::-moz-placeholder {
 	color: #fcb54d;
    	opacity:  1;
 	text-align: center;
+	letter-spacing: 2px;
 }
 
 #secondary .search-form input[type="search"]:-ms-input-placeholder {
 	color: #fcb54d;
 	text-align: center;
+	letter-spacing: 2px;
 }
 
 
@@ -1012,7 +1061,7 @@ body.blog .content .entry-meta {
 }
 
 .entry-meta .author {
-	font-weight: 700;
+	font-weight: 800;
 }
 
 .entry-meta .posted-on {
@@ -1037,11 +1086,16 @@ article {
 	margin-bottom: 20px;
 }
 
+article:last-of-type {
+	border: 0;
+}
+
 article h2.entry-title {
 	margin: 0;
 	font-size: 1.5rem;
+	text-transform: capitalize;
 }
-	
+
 #pagination {
 	text-align: center;
 	font-size: 0.875rem;
@@ -1110,8 +1164,20 @@ article h2.entry-title {
 	white-space: nowrap;
 }
 
+#primary a.btn:hover,
+#primary a.btn:active,
+#secondary a.btn:hover,
+#secondary a.btn:active {
+	background: #f3a129;
+}
+
 .acf {
 	clear: both;
+	margin-bottom: 80px;
+}
+
+.acf:last-child {
+	margin-bottom: 0;
 }
 
 .acf h2 {
@@ -1152,12 +1218,14 @@ article h2.entry-title {
 #primary .onecolumnhero a.btn:visited,
 #primary .onecolumnhero a.btn:active {
 	font-weight: 700;
+	letter-spacing: .3px;
 }
 
 .twocolumn-leftmedia-rightcopy,
 .twocolumn-leftcopy-rightmedia {
 	display: inline-block;
-	padding: 60px 0 120px 0;
+	padding: 30px 0 100px 0;
+	padding: 0 0 90px 0;
 	border-bottom: 1px solid #ecf2f7;
 }
 
@@ -1175,6 +1243,9 @@ article h2.entry-title {
 	padding-left: 18px;
 }
 
+.threecolumn {
+	display: inline-block;
+}
 
 .threecolumn .tab1,
 .threecolumn .tab2,
@@ -1243,17 +1314,26 @@ article h2.entry-title {
 	font-size: 1.68rem;
 	text-transform: none;
 }
+
+#primary .threecolumn a:hover,
+#primary .threecolumn a:active {
+	color: #101f31;
+	color: #2d527d;
+	color: #fff;
+}
 	
 .centeredcopy { 
 	text-align: center; 
-	padding: 40px 0 0 0;
 	clear: both;
+        padding: 0 0 90px 0;
+        border-bottom: 1px solid #ecf2f7;
+	display: block;
 }
 
 .centeredcopy h2 {
 	margin: 0 20%;
 	padding-bottom: 50px;
-	background: url(images/divider.png) bottom center no-repeat;
+	background: url(images/divider.svg) bottom center no-repeat;
 }
 
 .callout {
@@ -1282,10 +1362,10 @@ article h2.entry-title {
 	font-size: 1.375rem;
 	letter-spacing: .2rem;
 	line-height: 1.75rem;
+	font-weight: 700;
 }
 
 .constellation {
-	margin-top: 30px;
 	text-align: center;
 	background-color: #e5f7fd;
 	display: inline-block;
@@ -1498,20 +1578,23 @@ article h2.entry-title {
 	font-weight: 600;
 }
 
-.site-footer a {
+.site-footer a,
+.site-footer a:visited {
 	color: #eae8e1;
 	text-decoration: none;
+	font-weight: 700;
 }
 
 .site-footer a:hover,
 .site-footer a:active,
 .site-footer a:focus,
-.site-footer a:visited,
 .site-footer .current_page_item > a,
 .site-footer .current-menu-item > a,
 .site-footer .current_page_ancestor > a,
 .site-footer .current-menu-ancestor > a {
+	text-decoration: none;
         color: #fcb54d;
+	font-weight: 700;
 }
 
 
@@ -1523,6 +1606,12 @@ article h2.entry-title {
 	font-size: 0.875rem;
 }
 
+.site-footer input[type="text"],
+.site-footer input[type="search"] {
+        border: 1px solid #96d7f1;
+        background: #d0edf9;
+}
+
 .site-footer button,
 .site-footer input[type="button"],
 .site-footer input[type="submit"],
@@ -1531,13 +1620,17 @@ article h2.entry-title {
 	font-size: 0.75rem;
 	margin-left: -20px;
 	padding: 12px 20px;
+	padding: 12px 25px;
 	font-weight: 100;
+	letter-spacing: 2px;
+
 }
 
 .site-footer input[type="submit"] {
 	position: absolute;
 	top: 6px;
 	right: -8px;
+	letter-spacing: 2px;
 }
 	
 .site-footer .gform_wrapper {
@@ -1553,7 +1646,6 @@ article h2.entry-title {
 
 .site-footer .gform_wrapper .top_label input.medium {
 	width: 90%;
-	padding-right: 80px;
 	margin-right: 20px;
 }
 
@@ -1572,6 +1664,32 @@ article h2.entry-title {
 	float: left;
 }
 
+.site-footer .footerCol1 img {
+	width: 173px;
+	height: 72px;
+}
+
+.site-footer .footerCol1 a {
+	display: block;
+	width: 173px;
+	height: 72px;
+	background: url(images/logo-footer.svg) top left no-repeat;
+	text-indent: -9999px;
+	-webkit-transition: none;
+           -moz-transition: none;
+                transition: none;
+}
+
+.site-footer .footerCol1 a:hover,
+.site-footer .footerCol1 a:active {
+        background: url(images/logo-footer-on.svg) top left no-repeat;
+	width: 173px;
+	height: 72px;
+	-webkit-transition: none;
+           -moz-transition: none;
+		transition: none;
+}
+
 .site-footer .footerCol2 {
 	font-weight: 600;
 	font-size: 0.875rem;
@@ -1579,6 +1697,8 @@ article h2.entry-title {
 	margin-top: 80px;
 	width: 15%;
 	float: left;
+	/* Pre load the logo hover so it doesn't flicker */
+        background: url(images/logo-footer-on.svg) -9999px -9999px no-repeat;
 }
 
 .site-footer .footerCol3 {
@@ -1609,9 +1729,10 @@ article h2.entry-title {
 }
 
 .site-footer .widget_cnss_widget {
-	width: 40%;
+	width: 30%;
 	float: left;
 }
+
 
 .site-footer ul.cnss-social-icon li img {
 	margin: 5px 10px 0 0 !important;
@@ -1634,13 +1755,16 @@ article h2.entry-title {
     	letter-spacing: normal;
     	text-indent: .25em;
 	width: 55%;
+	width: 90%;
 	margin-right: 5px;
-	padding-right: 70px;
+	padding-right: 76px;
 	box-sizing: border-box;
 }
 
 .site-footer .widget_search {
 	position: relative;
+	width: 70%;
+	float: right;
 }
 
 .site-footer .search-submit {
@@ -2131,12 +2255,41 @@ object {
                 float: none !important;
         }
 
+	body.single #primary,
+	body.blog #primary,
+	body.page #primary {
+		padding-left: 0;
+		border-left: 0;
+	}
+
+	body.page-template-tpl-fullwidthsidebar #secondary {
+		padding-left: 0;
+	}
+
+	#secondary {
+	        border-top: 2px solid #e1e1e1;
+		padding-top: 30px;
+	}
+
 	.main-navigation {
         	float: right;
 	}
 
 	.main-navigation.toggled #both-menus {
 		margin-right: -12px;	
+	}
+
+	.site-branding img {
+        	width: 180px;
+		height: auto;
+	}
+
+	.site-header {
+		margin-bottom: 10px;
+	}
+
+	button.menu-toggle {
+		top: 53px !important;
 	}
 
 	.main-navigation ul {
@@ -2152,9 +2305,19 @@ object {
 	}
 
         .onecolumnhero p {
-                font-size: 1.125rem;
+                font-size: 1.125rem !important;
 		padding: 20px 0;
         }
+
+	.onecolumnhero a.btn {
+		font-size: 0.875rem !important;
+		letter-spacing: 0px !important;
+		padding: 10px 24px !important;
+	}
+
+	.onecolumnhero .container.image {
+		padding: 20px 5px;
+	}
 
 	.acf {
 		text-align: center;
@@ -2170,6 +2333,7 @@ object {
 
         .acf p {
                 font-size: 0.875rem;
+		font-size: 1rem;
 		text-align: center;
 		padding: 0 20px;
         }
@@ -2228,12 +2392,12 @@ object {
 
 
 	.threecolumn h3 {
-		font-size: 1.375rem;
-		font-weight: 700;
+		font-size: 1.375rem !important;
+		font-weight: 700 !important;
 	}
 
 	#primary .threecolumn a {
-		font-size: 1.625rem;
+		font-size: 1.625rem !important;
 	}
 
 	.centeredcopy h2 {
@@ -2268,11 +2432,20 @@ object {
 		margin: 5px 6px 0 0 !important;
 	}
 
+        .site-footer .widget_cnss_widget {
+                width: 40%;
+        }
+
+        .site-footer .widget_search {
+                width: 60%;
+        }
+
 	h1.hero {
 		margin: 40px 0;
 		font-size: 1.5rem;
 	}
 
+/*
 	article div.thumbnail {
 		width: 100%;
 		float: none;
@@ -2289,6 +2462,7 @@ object {
 		float: none;
 		margin-top: 30px;
 	}
+*/
 
 	body.blog #primary {
 		padding-left: 0;
@@ -2303,8 +2477,18 @@ object {
 
 @media (max-width: 500px) {
         .constellation p.circle {
-                left: 45% !important;
+                left: 50% !important;
         }
+
+	.constellation h3 {
+		width: 40% !important;
+		padding: 80px 10px 20px 10px;
+	}
+
+	blockquote.pullquote {
+		width: 100%;
+		float: none;
+	}
 }
 
 
@@ -2325,15 +2509,21 @@ object {
 		top: 37px;
 		right: 0px;
 		margin-bottom: 100px;
-		background: url(images/hamburger-menu-button.png) top left no-repeat;
+		background: url(images/hamburger-menu.svg) top left no-repeat;
 		border-radius: 0;
 		text-indent: -9999px;
 		height: 42px;
 		width: 42px;
+		-webkit-transition: none;
+           	-moz-transition: none;
+                transition: none;
 	}
 
         .main-navigation.toggled button.menu-toggle {
-                background: url(images/hamburger-menu-button-on.png) top left no-repeat;
+                background: url(images/hamburger-menu.svg) bottom left no-repeat;
+		-webkit-transition: none;
+           	-moz-transition: none;
+                transition: none;
         }
 
         .main-navigation {
@@ -2343,9 +2533,13 @@ object {
 		top: 1px;
 		right: 1px;
 		z-index: 999;
-		width: 500px;
 		max-width: 100%;
         }
+
+        .main-navigation.toggled {
+		width: 500px;
+	}
+
 
         .main-navigation.toggled #both-menus {
 		background: #fff;
@@ -2405,6 +2599,24 @@ object {
 		font-size: 2.625rem;
 	}
 
+        article div.thumbnail {
+                width: 100%;
+                float: none;
+                padding-right: 0;
+        }
+
+        article div.thumbnail img {
+                width: 100%;
+                height: auto;
+        }
+
+        article div.content {
+                width: 100%;
+                float: none;
+                margin-top: 30px;
+        }
+
+
 	.site-footer .footerCol1 {
 		width: 50%;
 		padding-right: 5px;
@@ -2435,8 +2647,22 @@ object {
 		width: 95%;
 	}	
 
+	.site-footer .gform_wrapper .top_label input.medium {
+        	padding-right: 105px;
+        	margin-right: 20px;
+	}
+
+        .site-footer ul.cnss-social-icon li img {
+                margin: 5px 9px 0 0 !important;
+        }
+
+        .site-footer input[type="search"] {
+                width: 90%;
+                padding-right: 86px;
+        }
+
 	.footerBottom {
-		margin-top: 20px;
+		margin-top: 60px;
 	}
 
 	.three-hero-posts,
@@ -2490,8 +2716,9 @@ object {
 		float: left;
 		text-align: left;
 		margin: 0;
-		padding: 85px 20px 20px 20px;
+		padding: 80px 20px 20px 20px;
 		height: 190px;
+		font-weight: 600;
 	}
 
 	.constellation .tab1 h3::after, 
@@ -2579,6 +2806,10 @@ object {
                 font-size: 2rem;
 	}
 
+	.site-header {
+                margin-bottom: 30px;
+        }
+
        	body.page-template-tpl-fullwidthsidebar h1.hero {
                 margin-top: 90px;
        	}
@@ -2589,8 +2820,41 @@ object {
         }
 
         .onecolumnhero p {
-                font-size: 1.125rem;
+                font-size: 1.125rem !important;
         }
+
+
+	#secondary ul {
+		margin: 20px 0 5px 0;
+	}
+
+	#secondary .tabs li {
+		font-size: 0.875rem;
+	}
+
+	#secondary .postList {
+		margin-bottom: 0px;
+	}
+
+	#secondary .postList h4 {
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 140%;
+		padding-left: 12px;
+		margin: 0;
+	}
+
+	#secondary .textwidget {
+		font-size: 0.875rem;
+	}
+
+	#secondary .textwidget li {
+		font-size: 0.75rem;
+	}
+
+	#secondary .textwidget ol li::before {
+		padding-right: 10px;
+	}
 
         .acf h2 {
                 font-size: 1.375rem;
@@ -2604,12 +2868,32 @@ object {
                 right: -14px;
         }
 
+        .site-footer .widget_cnss_widget {
+                width: 20%;
+        }
+
+        .site-footer .widget_search {
+                width: 80%;
+        }
+
+	.constellation h3 {
+		font-size: 2rem;
+	}
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 	/* medium grid */
 	body { border: 3px solid #f3f; }
 
+
+	.main-navigation {
+		margin-top: 7px;
+	}
+
+	.main-navigation li {
+		font-size: 1rem;
+	}
 
 	h1.hero {
         	margin: 140px 10px 0px 10px;
@@ -2651,7 +2935,7 @@ object {
 	}
 
 	.onecolumnhero p {
-		font-size: 1.5rem;
+		font-size: 1.5rem !important;
 	}
 
 	.acf h2 {
@@ -2660,6 +2944,7 @@ object {
 
 	.acf p {
 		font-size: 0.875rem;
+		font-size: 1reml
 	}
 
 	.threecolumn h3,
@@ -2668,9 +2953,25 @@ object {
 	}
 
 	.site-footer .gform_wrapper .top_label input.medium { 
-                padding-right: 60px;
+                padding-right: 85px;
         }
 
+	.site-footer .widget_cnss_widget {
+        	width: 35%;
+	}
+
+	.site-footer ul.cnss-social-icon li img {
+        	margin: 5px 9px 0 0 !important;
+	}
+
+	.site-footer input[type="search"] {
+        	width: 90%;
+        	padding-right: 83px;
+	}
+
+	.site-footer .widget_search {
+        	width: 65%;
+	}
 
 	.constellation .container {
         	margin: 40px 0;
@@ -2717,9 +3018,6 @@ object {
         	bottom: 80px;
 	}
 
-
-
-
 }
 
 
@@ -2730,7 +3028,7 @@ object {
         }
 	
 	.site-footer .gform_wrapper .top_label input.medium { 
-		padding-right: 60px;
+		padding-right: 82px;
 	}
 
 /*
@@ -2772,7 +3070,7 @@ object {
 
 	#page,
 	.site-footer {
-		padding: 0 10px 10px 10px;
+		padding: 0 5px;
 	}
 
 }
