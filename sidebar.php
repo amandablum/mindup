@@ -48,55 +48,55 @@ if ( ! is_active_sidebar( 'fullwidthtemplatesidebar' ) ) {
 </ul>
 <div id="tab1">
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href=""><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Popular Blog Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
                 </div>
 
 </div>
 <div id="tab2">
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Latest Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Latest Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Latest Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Latest Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Latest Post Title can extend to three lines, max char 73</a></h4>
                 </div>
                 <div class="postList">
-                        <img src="/wp-content/uploads/2016/03/2.png">
-                        <h4>Latest Post Title can extend to three lines, max char 73</h4>
+                        <a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
+                        <h4><a href="">Latest Post Title can extend to three lines, max char 73</a></h4>
                 </div>
 </div>
 

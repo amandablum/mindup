@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-
 
         <div class="hero-post">
                 <img src="/wp-content/uploads/2016/03/daff-768x576.jpg">

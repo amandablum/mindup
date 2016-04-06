@@ -17,7 +17,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div id="footer-wrap">
 			<div class="footerCol1">
-				<a href="/">MindUp</a>
+				<a href="/" class="footer-logo">MindUp</a>
 				<?php dynamic_sidebar('footercol1'); ?>
 			</div>
 			<div class="footerCol2">

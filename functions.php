@@ -206,3 +206,18 @@ function mindup_custom_upload_mimes ( $existing_mimes=array() ) {
 	return $existing_mimes;
 }
 add_filter('upload_mimes', 'mindup_custom_upload_mimes');
+
+
+
+/* limit the length of the post excerpt */
+function mindup_custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'mindup_custom_excerpt_length', 999 );
+
+
+/* change the excerpt read more thing */
+function mindup_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'mindup_excerpt_more' );

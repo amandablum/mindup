@@ -50,9 +50,9 @@ get_header(); ?>
         <header class="entry-header">
                 <?php
                         if ( is_single() ) {
-                                the_title( '<h1 class="entry-title">', '</h1>' );
+                                the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h1 class="entry-title">', '</h1></a>' );
                         } else {
-                                the_title( '<h2 class="entry-title">', '</h2>' );
+                                the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h2 class="entry-title">', '</h2></a>' );
                         }
 
                 if ( 'post' === get_post_type() ) : ?>
@@ -69,7 +69,7 @@ get_header(); ?>
         </div><!-- .entry-content -->
 
         <footer class="entry-footer">
-                <?php mindup_entry_footer(); ?>
+		<?php mindup_posted_on(); ?><?php mindup_entry_footer(); ?>
         </footer><!-- .entry-footer -->
 	</div> <!-- content -->
 </article><!-- #post-## -->
