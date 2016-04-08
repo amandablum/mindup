@@ -26,8 +26,8 @@
                   <?php
                   //echo $const . " of " . $max_const; 
                   ?>
-                  <h3><?php echo $const_label; ?></h3>
-                  <div class="circle">
+                  <h3 onclick=""><?php echo $const_label; ?></h3>
+                  <div class="circle" onclick="">
                     <div class="circle-image"><img class="image-responsive" src="<?php echo $const_icon['url']; ?>" alt=""></div>
                     <p class="circle-text"><?php echo $const_copy; ?>
                     <?php

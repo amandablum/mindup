@@ -1551,19 +1551,23 @@ article h2.entry-title {
         pointer-events: none;
 }
 
-.constellation .items > div:hover div.circle {
+.constellation .items > div:hover div.circle,
+.constellation .items > div:focus div.circle {
         margin: 0 0 0 -115px;
         width: 230px;
         height: 230px;
 }
-.constellation .items > div:hover .circle-image {
+.constellation .items > div:hover .circle-image,
+.constellation .items > div:focus .circle-image {
         opacity: 0;
 }
-.constellation .items > div:hover .circle-text {
+.constellation .items > div:hover .circle-text,
+.constellation .items > div:focus .circle-text {
         opacity: 1;
 }
 
 
+/* cee */
 
 .constellation .circle a {
   display: block;
@@ -2807,13 +2811,15 @@ object {
 		margin: 0;
 	}
 
-	.constellation .items > div:hover .circle {
+	.constellation .items > div:hover .circle,
+	.constellation .items > div:active .circle {
 		padding: 10px !important;
 		height: 190px !important;
 		width: 190px !important;
 		margin: -95px 0 0 10px !important;
 	}
 
+/* cee */
 
 }
 
