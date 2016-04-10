@@ -231,6 +231,7 @@ input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: none;
 	cursor: pointer;
+height: 36px;
 }
 
 button[disabled],
@@ -549,7 +550,7 @@ input[type="submit"] {
 	background: #fcb54d;
 	font-size: 1rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .6em 1em .4em !important;
 	text-transform: uppercase;
 	color: #fff;
         -webkit-transition: all .2s ease;
@@ -1313,6 +1314,13 @@ article h2.entry-title {
 	border-bottom: 1px solid #ecf2f7;
 }
 
+.twocolumn-leftmedia-rightcopy img,
+.twocolumn-leftcopy-rightmedia img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
 .twocolumn-leftmedia,
 .twocolumn-leftcopy {
 	width: 50%;
@@ -1551,6 +1559,11 @@ article h2.entry-title {
         pointer-events: none;
 }
 
+.constellation .circle-image img {
+	width: 100%;
+	height: 100%;
+}
+
 .constellation .items > div:hover div.circle,
 .constellation .items > div:focus div.circle {
         margin: 0 0 0 -115px;
@@ -1567,7 +1580,6 @@ article h2.entry-title {
 }
 
 
-/* cee */
 
 .constellation .circle a {
   display: block;
@@ -1688,10 +1700,26 @@ article h2.entry-title {
 	font-size: 0.75rem;
 	margin-left: -20px;
 	padding: 12px 20px;
-	padding: 12px 25px;
+	padding: 12px 25px !Important;
 	font-weight: 100;
 	letter-spacing: 2px;
 
+}
+
+.site-footer div.validation_error {
+	display: none;
+}
+
+.site-footer .gform_wrapper li.gfield.gfield_error {
+	background-color: transparent;
+	border: 0;
+}
+
+.site-footer .gform_wrapper .ginput_container+.gfield_description.validation_message,
+.site-footer .gform_wrapper .gfield_description.validation_message, 
+.site-footer .gform_wrapper .top_label .gfield_description.validation_message {
+	margin: 0;
+	padding: 0 !important;
 }
 
 .site-footer input[type="submit"] {
@@ -1715,6 +1743,7 @@ article h2.entry-title {
 .site-footer .gform_wrapper .top_label input.medium {
 	width: 90%;
 	margin-right: 20px;
+height: 36px;
 }
 
 .site-footer .gform_wrapper .gform_footer {
@@ -1827,6 +1856,7 @@ article h2.entry-title {
 	margin-right: 5px;
 	padding-right: 76px;
 	box-sizing: border-box;
+height: 36px;
 }
 
 .site-footer .widget_search {
@@ -2141,6 +2171,10 @@ a:active {
 
 .single .byline {
 	display: inline;
+}
+
+.single .video-container {
+	margin-top: 16px;
 }
 
 .page-content,
@@ -2819,7 +2853,6 @@ object {
 		margin: -95px 0 0 10px !important;
 	}
 
-/* cee */
 
 }
 
@@ -2947,6 +2980,10 @@ object {
                 float: none !Important;
                 width: 100% !Important;
         }
+
+	.site-footer .footerCol1 a.footer-logo {
+		margin: 0 auto;
+	}
 
 	.site-footer .footerCol2,
 	.site-footer .footerCol3 {

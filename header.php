@@ -21,6 +21,9 @@
 
 <?php wp_head(); ?>
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<!--[if IE]>
+	<link href="<?php echo get_stylesheet_directory_uri() ?>/ie.css" rel="stylesheet" type="text/css">
+<![endif]-->
 </head>
 
 <body <?php body_class(); ?>>
