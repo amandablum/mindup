@@ -83,7 +83,7 @@ get_header(); ?>
 			<?php
 			endif;
 
-			query_posts( 'cat=-1' ); // exclude News category
+			query_posts( array( 'category__not_in' => 1 ) ); // exclude News category
 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post(); ?>
@@ -91,7 +91,7 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="thumbnail">
 						<?php if ( has_post_thumbnail() ) { ?>
-							<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark"><?php echo the_post_thumbnail( 'large' );?></a>
+							<a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark"><?php echo the_post_thumbnail( 'medium' );?></a>
 						<?php } ?>
 					</div>
 
