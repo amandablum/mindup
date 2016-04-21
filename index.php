@@ -17,12 +17,17 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
+		<?php
+		/*
+		 * mobile only search
+		 */
+		get_template_part( 'template-parts/mobile', 'search' ); ?>
 
 		<div class="three-hero-posts">
 
 			<article class="hero-one">
 			<a href="/webinar-2/"><img src="/wp-content/uploads/2016/03/150528074702-amy-schumer-file-overlay-tease.jpg"></a>
-				<h2><a href="">This is the first news post.</a></h2>
+				<h2><a href="">This is the first news post FIRSTINDEX.</a></h2>
 				<div class="entry-meta">
 					<span class="byline"> BY <span class="author vcard">Amanda</span></span> | <span class="posted-on"><time class="entry-date published" datetime="2016-03-15T21:10:09+00:00">March 15, 2016</time><time class="updated" datetime="2016-03-31T13:53:35+00:00">March 31, 2016</time></span>
 				</div><!-- .entry-meta -->

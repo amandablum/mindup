@@ -911,7 +911,8 @@ body.page-template-tpl-repo #primary {
 	border: 0;
 }
 
-#secondary .search-form input[type="search"] {
+#secondary .search-form input[type="search"],
+#mobilesearch .search-form input[type="search"] {
 	background: transparent;
 	border: 1px solid #e1e1e1;
 	width: 100%;
@@ -920,31 +921,37 @@ body.page-template-tpl-repo #primary {
 }
 
 #secondary .search-form input[type="submit"],
-#secondary .search-form .search-submit {
+#secondary .search-form .search-submit,
+#mobilesearch .search-form input[type="submit"],
+#mobilesearch .search-form .search-submit {
 	display: none;
 }
 
-#secondary .search-form input[type="search"]::-webkit-input-placeholder {
+#secondary .search-form input[type="search"]::-webkit-input-placeholder,
+#mobilesearch .search-form input[type="search"]::-webkit-input-placeholder {
 	color: #fcb54d;
 	text-align: center;
 	letter-spacing: 2px;
 }
 
-#secondary .search-form input[type="search"]:-moz-placeholder {
-	color: #fcb54d;
-	opacity:  1;
-	text-align: center;
-	letter-spacing: 2px;
-}
-
-#secondary .search-form input[type="search"]::-moz-placeholder {
+#secondary .search-form input[type="search"]:-moz-placeholder,
+#mobilesearch .search-form input[type="search"]:-moz-placeholder {
 	color: #fcb54d;
 	opacity:  1;
 	text-align: center;
 	letter-spacing: 2px;
 }
 
-#secondary .search-form input[type="search"]:-ms-input-placeholder {
+#secondary .search-form input[type="search"]::-moz-placeholder,
+#mobilesearch .search-form input[type="search"]::-moz-placeholder {
+	color: #fcb54d;
+	opacity:  1;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+#secondary .search-form input[type="search"]:-ms-input-placeholder,
+#mobilesearch .search-form input[type="search"]:-ms-input-placeholder {
 	color: #fcb54d;
 	text-align: center;
 	letter-spacing: 2px;
@@ -2586,7 +2593,17 @@ object {
 		border-left: 0;
 	}
 
+	#secondary .search-form {
+		display: none;
+	}
 
+}
+
+@media (min-width: 767px) {
+
+	#mobilesearch {
+		display: none;
+	}
 
 }
 

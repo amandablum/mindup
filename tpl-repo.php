@@ -12,6 +12,12 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
+		<?php
+		/*
+		 * mobile only search
+		 */
+		get_template_part( 'template-parts/mobile', 'search' ); ?>
+
 		<div class="three-hero-posts">
 
 			<article class="hero-one">

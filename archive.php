@@ -12,6 +12,12 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
+		<?php
+		/*
+		 * mobile only search
+		 */
+		get_template_part( 'template-parts/mobile', 'search' ); ?>
+
 
 	<article class="hero-post">
 		<a href=""><img src="/wp-content/uploads/2016/03/150326100937-restricted-backstreet-boys-exlarge-169.jpg"></a>

@@ -3,7 +3,6 @@
  * Post Nav / pagination
  *
  * @package mindup
- * @author ChuckReynolds <chuck@vuurr.com>
  */
 ?>
 
