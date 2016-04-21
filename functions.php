@@ -175,6 +175,13 @@ function mindup_sidebars() {
 	);
 	register_sidebar( $args );
 
+	$args = array(
+		'id'          => '404',
+		'name'        => __( '404 Page Visual Editor', 'mindup' ),
+		'description' => __( 'Add a Visual Editor Widget to control content on the 404 error page.', 'mindup' ),
+	);
+	register_sidebar( $args );
+
 }
 add_action( 'widgets_init', 'mindup_sidebars' );
 endif;
