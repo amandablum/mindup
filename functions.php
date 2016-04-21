@@ -38,6 +38,9 @@ function mindup_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'mindup' ),
+                'header-right' => __( 'Header Right', 'mindup' ),
+                'footer-1' => __( 'Footer 1', 'mindup' ),
+                'footer-2' => __( 'Footer 2', 'mindup' )
 	) );
 
 	/*
@@ -96,6 +99,7 @@ function mindup_scripts() {
 	wp_enqueue_style( 'mindup-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'mindup-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'mindup-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'mindup-tabs', get_template_directory_uri() . '/js/tabs.js', array('jquery'), '20160402', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -150,7 +154,7 @@ function mindup_sidebars() {
 	$args = array(
 		'id'          => 'fullwidthtemplatesidebar',
 		'name'        => __( 'Full Width Template Sidebar', 'mindup' ),
-		'description' => __( 'You see this sidebar on pages using the Full Width with Sidebar Page Template. ', 'mindup' ),
+		'description' => __( 'You see this sidebar on pages using the Full Width with Sidebar Page Template.', 'mindup' ),
 	);
 	register_sidebar( $args );
 
@@ -158,3 +162,62 @@ function mindup_sidebars() {
 add_action( 'widgets_init', 'mindup_sidebars' );
 
 endif;
+
+
+
+
+
+/* mce custom mods */
+function mindup_mce_mod( $init ) {
+        $style_formats = array (
+                array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
+                array( 'title' => 'blockquote', 'block' => 'blockquote' ),
+                array( 'title' => 'pullquote', 'block' => 'blockquote', 'classes' => 'pullquote' ),
+                array( 'title' => 'button link', 'inline' => 'a', 'classes' => 'btn' ),
+        );
+        $init['style_formats'] = json_encode( $style_formats );
+        $init['style_formats_merge'] = false;
+        return $init;
+}
+add_filter('tiny_mce_before_init', 'mindup_mce_mod');
+
+function mindup_mce_add_buttons( $buttons ){
+    array_splice( $buttons, 1, 0, 'styleselect' );
+    return $buttons;
+}
+add_filter( 'mce_buttons_2', 'mindup_mce_add_buttons' );
+
+
+
+/* changes to the video embed container */
+function mindup_video_embed_container( $html ) { 
+    return '<div class="video-container">' . $html . '</div>'; 
+} 
+add_filter( 'embed_oembed_html', 'mindup_video_embed_container', 10 );
+
+
+
+
+
+
+/* add svg support to uploads */
+function mindup_custom_upload_mimes ( $existing_mimes=array() ) {
+	$existing_mimes['svg'] = 'mime/type';
+	return $existing_mimes;
+}
+add_filter('upload_mimes', 'mindup_custom_upload_mimes');
+
+
+
+/* limit the length of the post excerpt */
+function mindup_custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'mindup_custom_excerpt_length', 999 );
+
+
+/* change the excerpt read more thing */
+function mindup_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'mindup_excerpt_more' );

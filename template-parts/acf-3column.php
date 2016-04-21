@@ -7,7 +7,7 @@
  */
 ?>
 
-<section class="acf 3column">
+<section class="acf threecolumn">
 	<div class="container">
 
 	<?php
@@ -24,7 +24,7 @@
 	?>
 
 		<div class="tab<?php echo $tab; ?>">
-			<p><?php echo $three_col_headline; ?></p>
+			<h3><?php echo $three_col_headline; ?></h3>
 
 			<img class="image-responsive" src="<?php echo $three_col_image['url']; ?>" alt="">
 
@@ -33,7 +33,7 @@
 			<?php
 			if ( $three_col_ctacopy && $three_col_ctalink ) : ?>
 
-				<p><a href="<?php echo $three_col_ctalink; ?>" class="btn"><?php echo $three_col_ctacopy; ?></a></p>
+				<p><a href="<?php echo $three_col_ctalink; ?>"><?php echo $three_col_ctacopy; ?></a></p>
 
 			<?php
 			endif; ?>
