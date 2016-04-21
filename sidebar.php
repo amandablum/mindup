@@ -25,22 +25,16 @@ if ( is_single() || is_archive() || is_home() ) : ?>
 			<li><a href="#tab2">Recent</a></li>
 		</ul>
 		<div id="tab1">
-			<div class="postList">
-					<a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
-					<h4><a href=""><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
-			</div>
-			<div class="postList">
-					<a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
-					<h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
-			</div>
-			<div class="postList">
-					<a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
-					<h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
-			</div>
-			<div class="postList">
-					<a href=""><img src="/wp-content/uploads/2016/03/2.png"></a>
-					<h4><a href="">Popular Blog Post Title can extend to three lines, max char 73</a></h4>
-			</div>
+			<?php
+			if ( function_exists( 'wpp_get_mostpopular' ) ) :
+				/*
+				 * call WP Popular Posts plugin - filtered by wpp_custom_html
+				 */
+				wpp_get_mostpopular( 'post_type="post"' );
+			else:
+				echo '<p>no popular posts or wpp plugin is broken/off</p>';
+			endif;
+			?>
 		</div>
 		<div id="tab2">
 			<?php

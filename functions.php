@@ -135,6 +135,8 @@ require get_template_directory() . '/inc/template-tags.php'; // Custom template 
 require get_template_directory() . '/inc/extras.php';        // Custom functions that act independently of the theme templates
 require get_template_directory() . '/inc/customizer.php';    // Customizer additions
 require get_template_directory() . '/inc/jetpack.php';       // Load Jetpack compatibility file
+if ( function_exists( 'wpp_get_mostpopular' ) )
+	require get_template_directory() . '/inc/customize-popular-posts.php'; // Load filtered html output for WPP plugin
 
 if ( ! function_exists( 'mindup_sidebars' ) ) :
 /**
