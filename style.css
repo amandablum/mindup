@@ -1,4 +1,4 @@
-/://www.facebook.com/settings?tab=language*
+/*
 Theme Name: Mindup WP
 Theme URI: http://mindup.com
 Author: HowlingZoe
@@ -21,8 +21,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 
 /* Font reference
-
-
 font-family: 'Permanent Marker', cursive;
 	weight: 400
 font-family: 'Open Sans', sans-serif;
@@ -46,9 +44,6 @@ font-family: 'Raleway', sans-serif;
 * 55px		3.43rem
 * 64px		4rem
 * 72px		4.5rem
-
-
-
 */
 
 
@@ -341,11 +336,11 @@ h6 {
 
 h1 {
 	color: #474e5d;
-	font-size: 2.25rem; 
+	font-size: 2.25rem;
 	font-weight: 400;
 }
 
-h2, 
+h2,
 h1.entry-title {
 	color: #09aae2;
 	font-size: 2.25rem;
@@ -418,8 +413,8 @@ blockquote p:last-child {
 }
 
 blockquote.pullquote {
-	width: 50%; 
-	float: left; 
+	width: 50%;
+	float: left;
 	font-weight: 300;
 	clear: none;
 }
@@ -603,7 +598,7 @@ input[type="color"],
 textarea {
 	color: inherit;
 	border: 1px solid #96d7f1;
-border: 1px solid #22ABE1; 
+border: 1px solid #22ABE1;
 	border-radius: 0;
 	background: #d0edf9;
 background: #C3E8F7;
@@ -733,8 +728,8 @@ h1.hero {
     overflow: hidden;
 }
 
-.video-container iframe, 
-.video-container object, 
+.video-container iframe,
+.video-container object,
 .video-container embed {
     position: absolute;
     top: 0;
@@ -789,7 +784,7 @@ body.page-template-tpl-fullwidthsidebar #secondary {
 	margin-top: 0;
 }
 
-#secondary ul, 
+#secondary ul,
 #secondary ol {
 	margin: 30px 0 40px 0;
 	padding: 0;
@@ -972,13 +967,13 @@ body.single .entry-content {
 	margin-top: 0;
 }
 
-.entry-footer { 
-	margin-top: 15px; 
-	color: #fcb54d; 
+.entry-footer {
+	margin-top: 15px;
+	color: #fcb54d;
 }
 
 article .entry-footer span:after {
-	content: " | ";	
+	content: " | ";
 }
 
 article .entry-footer span:last-child:after {
@@ -1023,7 +1018,7 @@ article h2.entry-title a:active,
 .hero-post .entry-content p:last-child {
 	margin: 15px 0 7px 0;
 }
-	
+
 
 .hero-post .entry-footer {
 	font-size: 0.875rem;
@@ -1098,7 +1093,7 @@ article h2.entry-title a:active,
 .entry-footer .byline {
 	display: none;
 }
-	
+
 article div.thumbnail {
 	width: 30%;
 	float: left;
@@ -1344,7 +1339,7 @@ article h2.entry-title {
 .threecolumn .tab3 {
 	width: 32%;
 	float: left;
-	text-align: center; 
+	text-align: center;
 	padding: 22px 25px;
 	margin-right: 2%;
 }
@@ -1353,7 +1348,7 @@ article h2.entry-title {
 .threecolumn .tab5 {
 	display: none;
 }
-	
+
 
 .threecolumn .tab3 {
 	margin-right: 0;
@@ -1413,9 +1408,9 @@ article h2.entry-title {
 	color: #2d527d;
 	color: #fff;
 }
-	
-.centeredcopy { 
-	text-align: center; 
+
+.centeredcopy {
+	text-align: center;
 	clear: both;
         padding: 0 0 90px 0;
         border-bottom: 1px solid #ecf2f7;
@@ -1695,7 +1690,7 @@ article h2.entry-title {
 .site-footer button,
 .site-footer input[type="button"],
 .site-footer input[type="submit"],
-.site-footer .gform_wrapper .gform_footer input.button, 
+.site-footer .gform_wrapper .gform_footer input.button,
 .site-footer .gform_wrapper .gform_footer input[type=submit] {
 	font-size: 0.75rem;
 	margin-left: -20px;
@@ -1716,7 +1711,7 @@ article h2.entry-title {
 }
 
 .site-footer .gform_wrapper .ginput_container+.gfield_description.validation_message,
-.site-footer .gform_wrapper .gfield_description.validation_message, 
+.site-footer .gform_wrapper .gfield_description.validation_message,
 .site-footer .gform_wrapper .top_label .gfield_description.validation_message {
 	margin: 0;
 	padding: 0 !important;
@@ -1728,7 +1723,7 @@ article h2.entry-title {
 	right: -8px;
 	letter-spacing: 2px;
 }
-	
+
 .site-footer .gform_wrapper {
 	position: relative;
 	margin: 0;
@@ -1871,7 +1866,7 @@ height: 36px;
         right: 0;
 }
 
-.site-footer input[type="search"]::-webkit-input-placeholder { 
+.site-footer input[type="search"]::-webkit-input-placeholder {
     color:    #d0edf9;
 }
 
@@ -1885,7 +1880,7 @@ height: 36px;
    opacity:  1;
 }
 
-.site-footer input[type="search"]:-ms-input-placeholder { 
+.site-footer input[type="search"]:-ms-input-placeholder {
    color:    #d0edf9;
 }
 
@@ -2401,7 +2396,7 @@ object {
 	}
 
 	.main-navigation.toggled #both-menus {
-		margin-right: -12px;	
+		margin-right: -12px;
 	}
 
 	.site-branding img {
@@ -2474,8 +2469,8 @@ object {
 		font-size: 1.125rem;
 	}
 
-	.twocolumn-leftmedia, 
-	.twocolumn-rightmedia, 
+	.twocolumn-leftmedia,
+	.twocolumn-rightmedia,
 	.twocolumn-leftcopy,
 	.twocolumn-rightcopy {
 		width: 100%;
@@ -2490,9 +2485,9 @@ object {
         }
 
 	.twocolumn-leftcopy,
-        .twocolumn-rightcopy { 
+        .twocolumn-rightcopy {
 		padding-top: 20px;
-	}	
+	}
 
         .threecolumn h3,
         #primary .threecolumn a {
@@ -2558,7 +2553,7 @@ object {
 	.acf.callout .container {
 		padding: 0 10px;
 	}
-	
+
 	.site-footer ul.cnss-social-icon li {
 		margin: 0;
 		padding: 0;
@@ -2594,15 +2589,15 @@ object {
 		border-left: 0;
 	}
 
-	
+
 
 }
 
 @media (max-width: 991px) {
 	/* both small and xsmall */
 
-	.container { 
-		word-wrap: break-word; 
+	.container {
+		word-wrap: break-word;
 	}
 
 	.site-header {
@@ -2737,7 +2732,7 @@ object {
 
 	.site-footer .gform_wrapper .top_label input.medium {
 		width: 95%;
-	}	
+	}
 
 	.site-footer .gform_wrapper .top_label input.medium {
         	padding-right: 105px;
@@ -2762,13 +2757,13 @@ object {
 		display: none;
 	}
 
-        .threecolumn h3, 
-	#primary .threecolumn a { 
-		font-size: 1rem; 
+        .threecolumn h3,
+	#primary .threecolumn a {
+		font-size: 1rem;
 	}
-	
-	.threecolumn p:last-child { 
-		margin: 25px 0 0 0; 
+
+	.threecolumn p:last-child {
+		margin: 25px 0 0 0;
 	}
 
 
@@ -2781,10 +2776,10 @@ object {
 		width: 100%;
         }
 
-	.constellation .tab1, 
-	.constellation .tab2, 
-	.constellation .tab3, 
-	.constellation .tab4, 
+	.constellation .tab1,
+	.constellation .tab2,
+	.constellation .tab3,
+	.constellation .tab4,
 	.constellation .tab5 {
 		float: none;
 		width: 100%;
@@ -2801,10 +2796,10 @@ object {
 		font-weight: 600;
 	}
 
-	.constellation .tab1 h3::after, 
-	.constellation .tab2 h3::after, 
-	.constellation .tab3 h3::after, 
-	.constellation .tab4 h3::after, 
+	.constellation .tab1 h3::after,
+	.constellation .tab2 h3::after,
+	.constellation .tab3 h3::after,
+	.constellation .tab4 h3::after,
 	.constellation .tab5 h3::after {
 		top: 40%;
 		left: 100%;
@@ -2857,7 +2852,7 @@ object {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-	
+
 	h1.hero {
 		margin: 90px 10px 0 10px;
                 margin: 40px 0;
@@ -3074,7 +3069,7 @@ object {
 		font-size: 1.375rem;
 	}
 
-	.site-footer .gform_wrapper .top_label input.medium { 
+	.site-footer .gform_wrapper .top_label input.medium {
                 padding-right: 85px;
         }
 
@@ -3152,8 +3147,8 @@ object {
         .onecolumnhero .container.image {
                 min-height: 476px;
         }
-	
-	.site-footer .gform_wrapper .top_label input.medium { 
+
+	.site-footer .gform_wrapper .top_label input.medium {
 		padding-right: 82px;
 	}
 
