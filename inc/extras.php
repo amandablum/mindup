@@ -7,6 +7,15 @@
  * @package mindup
  */
 
+
+
+function mindup_offset_main_query ( $query ) {
+	if ( $query->is_archive() && $query->is_main_query() && !$query->is_paged() ) {
+		$query->set( 'offset', '1' );
+	}
+}
+add_action( 'pre_get_posts', 'mindup_offset_main_query' );
+
 /**
  * Adds custom classes to the array of body classes.
  *
