@@ -8,7 +8,7 @@
  */
 
 if ( ! function_exists( 'mindup_posted_on' ) ) :
-/**
+/*
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function mindup_posted_on() {
@@ -26,13 +26,13 @@ function mindup_posted_on() {
 
 	$posted_on = sprintf(
 		esc_html_x( '%s', 'post date', 'mindup' ),
-		//'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		#'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		$time_string
 	);
 
 	$byline = sprintf(
 		esc_html_x( 'BY %s', 'post author', 'mindup' ),
-		//'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		#'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
 	);
 
@@ -42,21 +42,22 @@ function mindup_posted_on() {
 endif;
 
 if ( ! function_exists( 'mindup_entry_footer' ) ) :
-/**
+/*
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function mindup_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		//$categories_list = get_the_category_list( esc_html__( ', ', 'mindup' ) );
-		//if ( $categories_list && mindup_categorized_blog() ) {
-			//printf( '****<span class="cat-links">' . esc_html__( '%1$s', 'mindup' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		//}
+		/* translators: used between list items, there is a space after the comma
+		$categories_list = get_the_category_list( esc_html__( ', ', 'mindup' ) );
+		if ( $categories_list && mindup_categorized_blog() ) {
+			printf( '****<span class="cat-links">' . esc_html__( '%1$s', 'mindup' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+		*/
 	}
 
 
-	//if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	#if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( esc_html__( 'Leave a comment', 'mindup' ), esc_html__( '1 Comment', 'mindup' ), esc_html__( '% Comments', 'mindup' ) );
@@ -73,15 +74,17 @@ function mindup_entry_footer() {
 		echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">Read More ></a>';
 	}
 
-	//edit_post_link(
-	//	sprintf(
-	//		/* translators: %s: Name of current post */
-	//		esc_html__( 'Edit %s', 'mindup' ),
-	//		the_title( '<span class="screen-reader-text">"', '"</span>', false )
-	//	),
-	//	'<span class="edit-link">',
-	//	'</span>'
-	//);
+	/*
+	edit_post_link(
+		sprintf(
+			// translators: %s: Name of current post
+			esc_html__( 'Edit %s', 'mindup' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		),
+		'<span class="edit-link">',
+		'</span>'
+	);
+	*/
 }
 endif;
 
@@ -115,7 +118,7 @@ function mindup_categorized_blog() {
 	}
 }
 
-/**
+/*
  * Flush out the transients used in mindup_categorized_blog.
  */
 function mindup_category_transient_flusher() {

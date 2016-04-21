@@ -27,3 +27,78 @@ function mindup_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'mindup_body_classes' );
+
+/*
+ * tiny mce custom mods
+ */
+function mindup_mce_mod( $init ) {
+
+	$style_formats = array (
+			array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
+			array( 'title' => 'blockquote', 'block' => 'blockquote' ),
+			array( 'title' => 'pullquote', 'block' => 'blockquote', 'classes' => 'pullquote' ),
+			array( 'title' => 'button link', 'inline' => 'a', 'classes' => 'btn' ),
+	);
+
+	$init['style_formats'] = json_encode( $style_formats );
+
+	$init['style_formats_merge'] = false;
+
+	return $init;
+
+}
+add_filter( 'tiny_mce_before_init', 'mindup_mce_mod' );
+
+/*
+ * tiny mce custom mods
+ */
+function mindup_mce_add_buttons( $buttons ) {
+
+	array_splice( $buttons, 1, 0, 'styleselect' );
+
+	return $buttons;
+
+}
+add_filter( 'mce_buttons_2', 'mindup_mce_add_buttons' );
+
+/*
+ * changes to the video embed container
+ */
+function mindup_video_embed_container( $html ) {
+
+	return '<div class="video-container">' . $html . '</div>';
+
+}
+add_filter( 'embed_oembed_html', 'mindup_video_embed_container', 10 );
+
+/*
+ * add svg support to uploads
+ */
+function mindup_custom_upload_mimes ( $existing_mimes=array() ) {
+
+	$existing_mimes['svg'] = 'mime/type';
+
+	return $existing_mimes;
+
+}
+add_filter( 'upload_mimes', 'mindup_custom_upload_mimes' );
+
+/*
+ * limit the length of the post excerpt
+ */
+function mindup_custom_excerpt_length( $length ) {
+
+	return 25;
+
+}
+add_filter( 'excerpt_length', 'mindup_custom_excerpt_length', 999 );
+
+/*
+ * change the excerpt read more thing
+ */
+function mindup_excerpt_more( $more ) {
+
+	return '&hellip;';
+
+}
+add_filter( 'excerpt_more', 'mindup_excerpt_more' );
