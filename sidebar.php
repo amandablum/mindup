@@ -30,8 +30,8 @@ if ( is_single() || is_archive() || is_home() ) : ?>
 				/*
 				 * call WP Popular Posts plugin - filtered by wpp_custom_html
 				 */
-				wpp_get_mostpopular( 'post_type="post"' );
-			else:
+				wpp_get_mostpopular( 'post_type="post", range="all", limit=6' );
+			else :
 				echo '<p>no popular posts or wpp plugin is broken/off</p>';
 			endif;
 			?>
