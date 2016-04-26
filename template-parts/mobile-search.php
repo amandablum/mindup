@@ -1,6 +1,8 @@
 <?php
-/*
+/**
  * mobile only search
+ *
+ * @package mindup
  */
 ?>
 <aside id="mobilesearch" role="complementary">
