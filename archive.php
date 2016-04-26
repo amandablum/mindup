@@ -16,10 +16,7 @@ get_header(); ?>
 		/*
 		 * mobile only search
 		 */
-		get_template_part( 'template-parts/mobile', 'search' ); ?>
-
-
-		<?php
+		get_template_part( 'template-parts/mobile', 'search' );
 
 		if ( have_posts() ) :                              // if archive has posts
 
@@ -65,9 +62,11 @@ get_header(); ?>
 			endwhile;
 
 		else :
+
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+
 			get_template_part( 'template-parts/pagination' );
 		?>
 
