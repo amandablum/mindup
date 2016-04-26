@@ -2,7 +2,7 @@
 /**
 * Template part for displaying post content in archive.php and custom page template archives.
 *
-* @link https://codex.wordpress.org/Template_Hierarchy
+* @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/#content-slug-php
 *
 * @package mindup
 */
@@ -21,18 +21,12 @@
 	<div class="content">
 		<header class="entry-header">
 			<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-			if ( 'post' === get_post_type() ) : ?>
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			?>
+
 			<div class="entry-meta">
 				<?php mindup_posted_on(); ?>
 			</div><!-- .entry-meta -->
-			<?php
-			endif;
-			?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
