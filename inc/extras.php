@@ -8,13 +8,23 @@
  */
 
 
-
+/* ///// old test for archive - pregetposts doesn't work on archive
 function mindup_offset_main_query ( $query ) {
-	if ( $query->is_archive() && $query->is_main_query() && !$query->is_paged() ) {
+	if ( $query->is_archive() && $query->is_main_query() ) {
 		$query->set( 'offset', '1' );
 	}
 }
 add_action( 'pre_get_posts', 'mindup_offset_main_query' );
+*/
+
+/* ///// test for repo not having news
+function exclude_category( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'category__not_in', '1' );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_category' );
+*/
 
 /**
  * Adds custom classes to the array of body classes.
