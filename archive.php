@@ -66,9 +66,13 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
-
-			get_template_part( 'template-parts/pagination' );
 		?>
+		<div id="pagination">
+		<?php
+		if ( function_exists( mindup_pagination_archives() ) )
+				mindup_pagination_archives();
+		?>
+		</div><!-- end pagination -->
 
 	</main><!-- #main -->
 </div><!-- #primary -->
