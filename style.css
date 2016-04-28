@@ -2579,15 +2579,7 @@ object {
 	#secondary .search-form {
 		display: none;
 	}
-
-}
-
-@media (min-width: 767px) {
-
-	#mobilesearch {
-		display: none;
-	}
-
+	
 	.three-hero-posts {
 		border: 0;
 		margin: 0;
@@ -2617,6 +2609,14 @@ object {
 		width: 100% !important;
 		float: none !important;
 		padding: 0 !important;
+	}
+	
+}
+
+@media (min-width: 767px) {
+
+	#mobilesearch {
+		display: none;
 	}
 
 }
