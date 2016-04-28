@@ -1684,6 +1684,16 @@ article h2.entry-title {
 	letter-spacing: 2px;
 }
 
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, 
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+        margin-top: .375em !important;
+}
+
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required {
+        margin-top: 0 !important;
+        margin-bottom: .75em !important;
+}
+
 .site-footer div.validation_error {
 	display: none;
 }
