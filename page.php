@@ -19,7 +19,7 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php
-		/**
+		/*
 		 * run the content types hyperloop
 		 */
 		do_action( 'mindup_hyperloop' ); ?>

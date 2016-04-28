@@ -6,7 +6,6 @@
  *
  * @package mindup
  */
-
 ?>
 
 <section class="no-results not-found">

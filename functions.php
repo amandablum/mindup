@@ -7,8 +7,15 @@
  * @package mindup
  */
 
+/*
+ * Set theme version for caching.
+ * If you remove this the world will implode. dont.
+ */
+define( 'MINDUP_VERSION', '0.1.0' );
+
+
 if ( ! function_exists( 'mindup_setup' ) ) :
-/**
+/*
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
@@ -17,7 +24,9 @@ if ( ! function_exists( 'mindup_setup' ) ) :
  */
 function mindup_setup() {
 
-	// Add default posts and comments RSS feed links to head.
+	/*
+	 * Add default posts and comments RSS feed links to head.
+	 */
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -28,19 +37,21 @@ function mindup_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
+	/**
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	/*
+	 * Register menus for wp_nav_menu() locations.
+	 */
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'mindup' ),
-                'header-right' => __( 'Header Right', 'mindup' ),
-                'footer-1' => __( 'Footer 1', 'mindup' ),
-                'footer-2' => __( 'Footer 2', 'mindup' )
+		'primary'      => __( 'Primary', 'mindup' ),
+		'header-right' => __( 'Header Right', 'mindup' ),
+		'footer-1'     => __( 'Footer 1', 'mindup' ),
+		'footer-2'     => __( 'Footer 2', 'mindup' )
 	) );
 
 	/*
@@ -55,9 +66,9 @@ function mindup_setup() {
 		'caption',
 	) );
 
-	/*
+	/**
 	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 * @see https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
@@ -67,15 +78,17 @@ function mindup_setup() {
 		'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
+	/*
+	 * Set up the WordPress core custom background feature.
+	 */
 	add_theme_support( 'custom-background', apply_filters( 'mindup_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 
 }
-endif;
 add_action( 'after_setup_theme', 'mindup_setup' );
+endif;
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -91,23 +104,29 @@ function mindup_content_width() {
 }
 add_action( 'after_setup_theme', 'mindup_content_width', 0 );
 
-/**
+/*
  * Enqueue scripts and styles.
  */
 function mindup_scripts() {
 
-	wp_enqueue_style( 'mindup-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'mindup-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'mindup-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'mindup-tabs', get_template_directory_uri() . '/js/tabs.js', array('jquery'), '20160402', true );
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	$font_args = array(
+		'family' => 'Open+Sans:400,300,600,700,800|Permanent+Marker|Raleway:500'
+		#'subset' => 'latin,latin-ext',
+	);
+
+	wp_enqueue_style(  'mindup-style',               get_stylesheet_uri() );
+	wp_enqueue_style(  'google-fonts',               add_query_arg( $font_args, '//fonts.googleapis.com/css' ),   array(), null );
+	wp_enqueue_script( 'mindup-navigation',          get_template_directory_uri() . '/js/navigation.js',          array(), MINDUP_VERSION, true );
+	wp_enqueue_script( 'mindup-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), MINDUP_VERSION, true );
+	wp_enqueue_script( 'mindup-tabs',                get_template_directory_uri() . '/js/tabs.js',                array( 'jquery' ), MINDUP_VERSION, true );
+	wp_enqueue_script( 'google-recaptcha',           '//www.google.com/recaptcha/api.js',                         array(), false );
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-	}
 
 }
 add_action( 'wp_enqueue_scripts', 'mindup_scripts' );
 
-/**
+/*
  * Some Assembly Required
  */
 require get_template_directory() . '/inc/acf-layouts.php';   // ACF functions and layouts for general use
@@ -116,15 +135,16 @@ require get_template_directory() . '/inc/template-tags.php'; // Custom template 
 require get_template_directory() . '/inc/extras.php';        // Custom functions that act independently of the theme templates
 require get_template_directory() . '/inc/customizer.php';    // Customizer additions
 require get_template_directory() . '/inc/jetpack.php';       // Load Jetpack compatibility file
+require get_template_directory() . '/inc/pagination.php';    // Custom Paginations
+if ( function_exists( 'wpp_get_mostpopular' ) )
+	require get_template_directory() . '/inc/customize-popular-posts.php'; // Load filtered html output for WPP plugin
 
+if ( ! function_exists( 'mindup_sidebars' ) ) :
 /**
  * Mindup Widget Areas
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-if ( ! function_exists( 'mindup_sidebars' ) ) :
-
-// Register Sidebars
 function mindup_sidebars() {
 
 	$args = array(
@@ -158,66 +178,13 @@ function mindup_sidebars() {
 	);
 	register_sidebar( $args );
 
+	$args = array(
+		'id'          => '404',
+		'name'        => __( '404 Page Visual Editor', 'mindup' ),
+		'description' => __( 'Add a Visual Editor Widget to control content on the 404 error page.', 'mindup' ),
+	);
+	register_sidebar( $args );
+
 }
 add_action( 'widgets_init', 'mindup_sidebars' );
-
 endif;
-
-
-
-
-
-/* mce custom mods */
-function mindup_mce_mod( $init ) {
-        $style_formats = array (
-                array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
-                array( 'title' => 'blockquote', 'block' => 'blockquote' ),
-                array( 'title' => 'pullquote', 'block' => 'blockquote', 'classes' => 'pullquote' ),
-                array( 'title' => 'button link', 'inline' => 'a', 'classes' => 'btn' ),
-        );
-        $init['style_formats'] = json_encode( $style_formats );
-        $init['style_formats_merge'] = false;
-        return $init;
-}
-add_filter('tiny_mce_before_init', 'mindup_mce_mod');
-
-function mindup_mce_add_buttons( $buttons ){
-    array_splice( $buttons, 1, 0, 'styleselect' );
-    return $buttons;
-}
-add_filter( 'mce_buttons_2', 'mindup_mce_add_buttons' );
-
-
-
-/* changes to the video embed container */
-function mindup_video_embed_container( $html ) { 
-    return '<div class="video-container">' . $html . '</div>'; 
-} 
-add_filter( 'embed_oembed_html', 'mindup_video_embed_container', 10 );
-
-
-
-
-
-
-/* add svg support to uploads */
-function mindup_custom_upload_mimes ( $existing_mimes=array() ) {
-	$existing_mimes['svg'] = 'mime/type';
-	return $existing_mimes;
-}
-add_filter('upload_mimes', 'mindup_custom_upload_mimes');
-
-
-
-/* limit the length of the post excerpt */
-function mindup_custom_excerpt_length( $length ) {
-    return 25;
-}
-add_filter( 'excerpt_length', 'mindup_custom_excerpt_length', 999 );
-
-
-/* change the excerpt read more thing */
-function mindup_excerpt_more( $more ) {
-    return '...';
-}
-add_filter( 'excerpt_more', 'mindup_excerpt_more' );
