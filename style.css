@@ -1612,7 +1612,6 @@ article h2.entry-title {
 	padding: 20px 0 0 0;
 }
 
-
 .site-footer {
 	background: #22abe1;
 	border-top: 1px solid #89d2ef;
@@ -1656,7 +1655,6 @@ article h2.entry-title {
 	font-weight: 700;
 }
 
-
 .site-footer h2.widgettitle {
 	margin: 0;
 	color: #eae8e1;
@@ -1684,14 +1682,14 @@ article h2.entry-title {
 	letter-spacing: 2px;
 }
 
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, 
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
-        margin-top: .375em !important;
+	margin-top: .375em !important;
 }
 
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required {
-        margin-top: 0 !important;
-        margin-bottom: .75em !important;
+	margin-top: 0 !important;
+	margin-bottom: .75em !important;
 }
 
 .site-footer div.validation_error {
@@ -2579,7 +2577,7 @@ object {
 	#secondary .search-form {
 		display: none;
 	}
-	
+
 	.three-hero-posts {
 		border: 0;
 		margin: 0;
@@ -2610,7 +2608,7 @@ object {
 		float: none !important;
 		padding: 0 !important;
 	}
-	
+
 }
 
 @media (min-width: 767px) {
