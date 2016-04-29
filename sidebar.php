@@ -5,7 +5,12 @@
  * @package mindup
  */
 
-if ( is_single() || is_page_template( 'tpl-repo.php' ) ) : ?>
+/**
+ * Conditional for popular posts sidebar.
+ * Added is_product for woocommerce
+ * @see https://docs.woothemes.com/document/conditional-tags/
+ */
+if ( is_single() || is_page_template( 'tpl-repo.php' ) || is_product() ) : ?>
 
 	<aside id="secondary" class="widget-area" role="complementary">
 
