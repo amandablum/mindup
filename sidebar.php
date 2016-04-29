@@ -12,7 +12,8 @@
  */
 if ( is_single() || is_page_template( 'tpl-repo.php' ) ) :
 
-	if ( is_product() ) return; ?>
+	if ( class_exists( 'WooCommerce' ) )
+		if ( is_product() ) return; ?>
 
 	<aside id="secondary" class="widget-area" role="complementary">
 
