@@ -5,16 +5,7 @@
  * @package mindup
  */
 
-if ( is_page() && is_active_sidebar( 'fullwidthtemplatesidebar' ) ) : ?>
-
-	<aside id="secondary" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'fullwidthtemplatesidebar' ); ?>
-	</aside><!-- #secondary -->
-
-<?php
-endif;
-
-if ( is_single() || is_archive() || is_home() ) : ?>
+if ( is_single() || is_page_template( 'tpl-repo.php' ) ) : ?>
 
 	<aside id="secondary" class="widget-area" role="complementary">
 
@@ -74,5 +65,11 @@ if ( is_single() || is_archive() || is_home() ) : ?>
 	</aside><!-- #secondary -->
 
 <?php
+elseif ( is_page() && is_active_sidebar( 'fullwidthtemplatesidebar' ) ) : ?>
+
+	<aside id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'fullwidthtemplatesidebar' ); ?>
+	</aside><!-- #secondary -->
+
+<?php
 endif;
-?>
