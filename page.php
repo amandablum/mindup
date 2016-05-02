@@ -10,7 +10,6 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package mindup
- * @author ChuckReynolds <chuck@vuurr.com>
  */
 
 get_header(); ?>
@@ -19,10 +18,12 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php
-		/*
-		 * run the content types hyperloop
-		 */
-		do_action( 'mindup_hyperloop' ); ?>
+		while ( have_posts() ) : the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+		endwhile; // End of the loop.
+		?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
