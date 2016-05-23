@@ -1396,13 +1396,17 @@ article h2.entry-title {
 	color: #fff;
 }
 
-.centeredcopy { /* no longer centered */
-	text-align: left;
-	font-size: 1.1em;
+.centeredcopy {
+	text-align: center;
 	clear: both;
 	padding: 0 0 90px 0;
 	border-bottom: 1px solid #ecf2f7;
 	display: block;
+}
+
+.centeredcopy p { /* no longer centered */
+	text-align: left;
+	font-size: 1.1em;
 }
 
 .centeredcopy h2 {
