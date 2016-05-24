@@ -17,7 +17,7 @@
 		<?php
 		if ( $centered_cta_copy && $centered_cta_link ) : ?>
 
-			<p><a href="<?php echo $centered_cta_link; ?>" class="btn"><?php echo $centered_cta_copy; ?></a></p>
+			<a href="<?php echo $centered_cta_link; ?>" class="btn"><?php echo $centered_cta_copy; ?></a>
 
 		<?php
 		endif; ?>
