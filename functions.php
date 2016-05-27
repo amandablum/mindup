@@ -11,7 +11,7 @@
  * Set theme version for caching.
  * If you remove this the world will implode. dont.
  */
-define( 'MINDUP_VERSION', '0.1.0' );
+define( 'MINDUP_VERSION', '1.0.0' );
 
 
 if ( ! function_exists( 'mindup_setup' ) ) :
