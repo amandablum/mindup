@@ -45,9 +45,10 @@ if ( is_single() || is_page_template( 'tpl-repo.php' ) ) :
 		<div id="tab2">
 			<?php
 			$recent_args = array (
-				'post_type'      => 'post',
-				'no_found_rows'  => true, // Skip SQL_CALC_FOUND_ROWS for performance (no pagination)
-				'posts_per_page' => 6
+				'post_type'           => 'post',
+				'no_found_rows'       => true,
+				'posts_per_page'      => 6,
+				'ignore_sticky_posts' => true
 			);
 			$recent_posts = new WP_Query( $recent_args );
 

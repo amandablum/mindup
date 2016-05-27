@@ -25,6 +25,7 @@ get_header(); ?>
 			'category__not_in' => 1,
 			'posts_per_page' => 5,
 			'paged' => $paged,
+			'ignore_sticky_posts' => true
 		);
 
 		$repo_query = new WP_Query( $repo_args );

@@ -46,7 +46,56 @@ function mindup_customize_popular_posts_list( $mostpopular, $instance ) {
 	// set blank output to fill
 	$output = '';
 
-	// loop the array of popular posts objects
+	/*
+	 * Even though this is for popular posts we want to display the most recent
+	 * sticky post on top if one exists. So we have a single query here at the top.
+	 */
+	$sticky = get_option( 'sticky_posts' );
+	$stickyargs = array(
+		'posts_per_page'      => 1,
+		'post__in'            => $sticky,
+		'ignore_sticky_posts' => 1,
+		'no_found_rows'       => true
+	);
+	$query = new WP_Query( $stickyargs );
+
+	if ( isset( $sticky[0] ) ) {
+
+		// Inject here your stick post(s).
+		if ( $query->have_posts() ) {
+
+			// This is your old, trusty WordPress loop!
+			while ( $query->have_posts() ) {
+
+				$query->the_post();
+
+				// get featured image for later
+				$thumbnail_image  = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' );
+
+				// get title and shorten it up
+				$post_title       = get_the_title( get_the_ID() ) ;
+				$post_title_short = wp_trim_words( $post_title, 10, '&hellip;' );
+
+				$output .= "<div class=\"postList\">" . "\n";
+				if ( $thumbnail_image ) :
+				$output .= "<a href=\"" . get_the_permalink( get_the_ID() ) . "\"><img src=\"" . $thumbnail_image[0] . "\"></a>" . "\n";
+				endif;
+
+				$output .= "<h4 data-wppcount=\"sticky\"><a href=\"" . get_the_permalink( get_the_ID() ) . "\" title=\"" . $post_title_short . "\">" . $post_title_short . "</a></h4>" . "\n";
+
+				$output .= "</div>" . "\n";
+
+			}
+
+		wp_reset_postdata();
+
+		}
+
+	}
+
+	/*
+	 * Loop the array of popular posts objects
+	 */
 	foreach( $mostpopular as $popular ) {
 
 		$stats = array(); // placeholder for the stats tag
@@ -105,36 +154,35 @@ function mindup_customize_popular_posts_list( $mostpopular, $instance ) {
 		}
 
 		// Build stats tag
-		if ( !empty($stats) ) {
+		if ( !empty( $stats ) ) {
 			$stats = '<div class="wpp-stats">' . join( ' | ', $stats ) . '</div>';
 		}
 
-		$excerpt = ''; // Excerpt placeholder
-
 		// Excerpt option checked, build excerpt tag
+		/* nooo
+		$excerpt = ''; // Excerpt placeholder
 		if ($instance['post-excerpt']['active']) {
-			/* nooo
+
 			$excerpt = get_excerpt_by_id( $popular->id );
 			if ( !empty($excerpt) ) {
 				$excerpt = '<div class="wpp-excerpt">' . $excerpt . '</div>';
 			}
-			*/
 		}
+		*/
 
 		// get featured image for later
 		$thumbnail_image = wp_get_attachment_image_src( get_post_thumbnail_id( $popular->id ), 'thumbnail' );
+
 		// get title and shorten it up
 		$post_title = $popular->title;
 		$post_title_short = wp_trim_words( $post_title, 10, '&hellip;' );
 
 		$output .= "<div class=\"postList\">" . "\n";
 		if ( $thumbnail_image ) :
-		$output .= "<a href=\"" . get_the_permalink( $popular->id ) . "\"><img src=\"" . $thumbnail_image[0] . "\"></a>" . "\n";
+		$output .= "<a href=\"" . get_the_permalink( $popular->id ) . "\"><img src=\"" . $thumbnail_image[0] . "\" alt=\"" . $post_title_short . "\"></a>" . "\n";
 		endif;
 
-		$output .= "<h4><a href=\"" . get_the_permalink( $popular->id ) . "\" title=\"" . $post_title_short . "\">" . $post_title_short . "</a></h4>" . "\n";
-
-		$output .= "<!-- " . $stats . " -->";
+		$output .= "<h4 data-wppcount=\"" . number_format_i18n( $popular->pageviews ) . "\"><a href=\"" . get_the_permalink( $popular->id ) . "\" title=\"" . $post_title_short . "\">" . $post_title_short . "</a></h4>" . "\n";
 
 		$output .= "</div>" . "\n";
 
