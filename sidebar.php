@@ -26,10 +26,19 @@ if ( is_single() || is_page_template( 'tpl-repo.php' ) ) :
 		<div id="tab1">
 			<?php
 			if ( function_exists( 'wpp_get_mostpopular' ) ) :
+
+				/*
+				 * Remove sticky posts from WPP
+				 * Makes the array into a string as needed by WPP Params
+				 * @see plugin settings /wp-admin/options-general.php?page=wordpress-popular-posts&tab=params
+				 */
+				$sticky = implode( ',', get_option( 'sticky_posts' ) );
+
 				/*
 				 * call WP Popular Posts plugin - filtered by wpp_custom_html
 				 */
 				$popular_posts_args = array (
+					'pid'            => 'pid="' . $sticky . '"',
 					'limit'          => 6,
 					'range'          => 'all',
 					'title_length'   => 25,
