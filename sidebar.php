@@ -34,13 +34,20 @@ if ( is_single() || is_page_template( 'tpl-repo.php' ) ) :
 				 */
 				$sticky = get_option( 'sticky_posts' );
 
+				// Make sure there's something in sticky var
+				if ( empty( $sticky ) ) :
+					$sticky = "0";
+				else :
+					$sticky = $sticky[0];
+				endif;
+
 				/*
 				 * Call WP Popular Posts plugin
 				 * Filtered by action: wpp_custom_html
 				 * PID param hides first sticky post
 				 */
 				$popular_posts_args = array (
-					'pid'            => 'pid="' . $sticky[0] . '"',
+					'pid'            => 'pid="' . $sticky . '"',
 					'limit'          => 6,
 					'range'          => 'all',
 					'title_length'   => 25,
