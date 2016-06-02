@@ -901,6 +901,10 @@ body.page-template-tpl-repo #primary {
 	border: 0;
 }
 
+h4[data-wppcount="sticky"] {
+  background-color: #fcb54d
+}
+
 #secondary .search-form input[type="search"],
 #mobilesearch .search-form input[type="search"] {
 	background: transparent;
@@ -1291,7 +1295,7 @@ article h2.entry-title {
 .twocolumn-leftcopy-rightmedia {
 	width: 100%;
 	display: inline-block;
-	padding: 30px 0 100px 0;
+	padding: 30px 0 40px 0;
 	padding: 0 0 90px 0;
 	border-bottom: 1px solid #ecf2f7;
 }
@@ -1415,6 +1419,18 @@ article h2.entry-title {
 	background: url(images/divider.svg) bottom center no-repeat;
 }
 
+.centeredcopy h3, .centeredcopy h4 {
+text-align: left;
+}
+
+.centeredcopy ul, .centeredcopy ol {
+	text-align: left;
+}
+
+.centeredcopy ol li, .centeredcopy ul li {
+	padding-left: 8px;
+}
+
 .callout {
 	background: #fcb54e;
 	padding: 40px;
@@ -1432,7 +1448,7 @@ article h2.entry-title {
 	margin: 20px 0;
 	font-size: 3.43rem;
 	font-weight: 400;
-	letter-spacing: .5rem;
+	letter-spacing: 0rem;
 	line-height: 120%;
 	color: #324459;
 }
@@ -1622,6 +1638,7 @@ article h2.entry-title {
 	background: #22abe1;
 	border-top: 1px solid #89d2ef;
 	padding: 50px 0;
+	margin-top: 20px;
 	color: #474e5d;
 }
 
