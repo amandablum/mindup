@@ -1545,7 +1545,7 @@ text-align: left;
 .constellation .circle-text {
 	opacity: 0;
 	transition: all 0.5s ease-out;
-	padding: 0;
+	padding: 10px;
 	margin: 0;
 }
 
@@ -2895,7 +2895,7 @@ object {
 
 	.constellation .circle-text {
 		font-size: 0.75rem !important;
-		padding: 10px !important;
+		padding: 20px !important;
 		margin: 0;
 	}
 
