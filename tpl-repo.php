@@ -20,7 +20,7 @@ get_header(); ?>
 			if ( class_exists( 'WordPress_Category_Tag_Cloud' ) ) {
 
 				show_tag_cloud( array(
-					'taxomony'   => 'category',
+					'taxonomy'   => 'category',
 					'order_by'   => 'name',
 					'order'      => 'ASC',
 					'smallest'   => '75',
