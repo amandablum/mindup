@@ -34,10 +34,10 @@ add_filter( 'body_class', 'mindup_body_classes' );
 function mindup_mce_mod( $init ) {
 
 	$style_formats = array (
-			array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
-			array( 'title' => 'blockquote', 'block' => 'blockquote' ),
-			array( 'title' => 'pullquote', 'block' => 'blockquote', 'classes' => 'pullquote' ),
-			array( 'title' => 'button link', 'inline' => 'a', 'classes' => 'btn' ),
+		array( 'title' => 'Heading over image', 'block' => 'h1', 'classes' => 'hero' ),
+		array( 'title' => 'blockquote', 'block' => 'blockquote' ),
+		array( 'title' => 'pullquote', 'block' => 'blockquote', 'classes' => 'pullquote' ),
+		array( 'title' => 'button link', 'inline' => 'a', 'classes' => 'btn' ),
 	);
 
 	$init['style_formats'] = json_encode( $style_formats );
@@ -71,17 +71,19 @@ function mindup_video_embed_container( $html ) {
 }
 add_filter( 'embed_oembed_html', 'mindup_video_embed_container', 10 );
 
-/*
- * add svg support to uploads
+/**
+ * Add SVG support
+ *
+ * @link https://www.leighton.com/blog/enable-upload-of-svg-to-wordpress-media-library
  */
-function mindup_custom_upload_mimes ( $existing_mimes=array() ) {
+function mindup_custom_mimetypes( $m ) {
 
-	$existing_mimes['svg'] = 'mime/type';
-
-	return $existing_mimes;
+	$m['svg']  = 'image/svg+xml';
+	$m['svgz'] = 'image/svg+xml';
+	return $m;
 
 }
-add_filter( 'upload_mimes', 'mindup_custom_upload_mimes' );
+add_filter( 'upload_mimes', 'mindup_custom_mimetypes' );
 
 /*
  * limit the length of the post excerpt
