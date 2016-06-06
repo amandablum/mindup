@@ -822,6 +822,13 @@ body.page-template-tpl-repo #primary {
 	border-left: 1px solid #e1e1e1;
 }
 
+/* repo/category cloud */
+.wpctc-rounded {
+	padding: 0 0 10px 0;
+}
+.wpctc-rounded ul {
+	padding: 0;
+}
 
 /* news latest/popular widget */
 #secondary .tabs {
