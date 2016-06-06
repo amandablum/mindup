@@ -12,6 +12,29 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
+		<div id="tag-cloud">
+			<?php
+			/*
+			 * Display tag cloud from plugin, but check to see if it's on first
+			 */
+			if ( class_exists( 'WordPress_Category_Tag_Cloud' ) ) {
+
+				show_tag_cloud( array(
+					'taxomony'   => 'category',
+					'order_by'   => 'name',
+					'order'      => 'ASC',
+					'smallest'   => '75',
+					'largest'    => '75',
+					'format'     => 'rounded',
+					'color'      => '#ffffff',
+					'background' => '#12A79E',
+					'border'     => '#ffffff'
+					)
+				);
+			}
+			?>
+		</div>
+
 		<?php
 		/*
 		 * mobile only search
@@ -21,10 +44,10 @@ get_header(); ?>
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 		$repo_args = array(
-			'post_type' => 'post',
-			'category__not_in' => 1,
-			'posts_per_page' => 5,
-			'paged' => $paged,
+			'post_type'           => 'post',
+			'category__not_in'    => 1,
+			'posts_per_page'      => 5,
+			'paged'               => $paged,
 			'ignore_sticky_posts' => true
 		);
 
