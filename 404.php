@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<?php
 
-			dynamic_sidebar( '404' );
+			dynamic_sidebar( '404_page' );
 
 			?>
 
