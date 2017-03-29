@@ -1,9 +1,17 @@
 # mindup theme dev
 
 ### env doc
-- `develop` branch for onging development.
-- push to `develop` to trigger deploybot deploy to staging site located at: xxxxx.xxxx.xxx.
-- `master` branch for pull requests upon release tags only.
+- **Bugs & Issues:** https://github.com/amandablum/mindup/issues/
+- Branch: `[develop](https://github.com/amandablum/mindup/tree/develop)` for onging development.
+- Branch: `master` for pull requests upon release tags only. pulled to pagely production.
+
+### Production
+- site: https://mindup.org
+- loc: hosting is at pagely.com. [Dashboard](https://atomic.pagely.com/apps/details/18772)
+- deploy:
+	- ssh into pagely
+	- cd `/sites/mindup.org/wp-content/themes/mindup/`
+	- `git pull orgin master`
 
 ### dev doc
 1. `pagebuilder` built in ACF. Within each module the only option is whether you're using an image or video
