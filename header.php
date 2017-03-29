@@ -9,7 +9,18 @@
  * @package mindup
  */
 
-?><!DOCTYPE html>
+/**
+ * Set logo based on page ident.
+ *
+ */
+$logo_file = get_stylesheet_directory_uri() . '/images/logo.svg';
+if ( is_page( array( 333, 'thehawnfoundation' ) ) ) {
+
+	$logo_file = get_stylesheet_directory_uri() . '/images/thflogo.svg';
+
+}
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -28,7 +39,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri() . '/images/logo.svg'; ?>" alt="<?php bloginfo( 'name' );?> "></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo_file; ?>" alt="<?php bloginfo( 'name' );?> "></a>
 			<?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
